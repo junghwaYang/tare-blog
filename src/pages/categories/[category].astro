@@ -1,0 +1,113 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import PostCard from '../../components/PostCard.astro';
+import { getAllCategories, getPostsByCategory } from '../../utils/posts';
+import { SITE_TITLE, SITE_URL } from '../../consts';
+
+export async function getStaticPaths() {
+  const allCategories = await getAllCategories();
+  return Promise.all(
+    allCategories.map(async (category) => {
+      const posts = await getPostsByCategory(category);
+      return {
+        params: { category },
+        props: { category, posts },
+      };
+    })
+  );
+}
+
+const { category, posts } = Astro.props;
+
+const pageTitle = `${category}`;
+const description = `"${category}" 카테고리의 글 ${posts.length}편`;
+
+const breadcrumbJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: '홈', item: SITE_URL },
+    { '@type': 'ListItem', position: 2, name: '카테고리', item: `${SITE_URL}/categories` },
+    { '@type': 'ListItem', position: 3, name: category, item: `${SITE_URL}/categories/${category}` },
+  ],
+};
+---
+
+<BaseLayout title={pageTitle} description={description}>
+  <script slot="jsonld" type="application/ld+json" set:html={JSON.stringify(breadcrumbJsonLd)} />
+  <div class="container category-container">
+    <header class="category-header">
+      <a href="/categories" class="category-back">← 모든 카테고리</a>
+      <h1 class="category-title">{category}</h1>
+      <p class="category-count">{posts.length}편</p>
+    </header>
+
+    {posts.length > 0 ? (
+      <div class="post-list">
+        {posts.map((post) => (
+          <PostCard post={post} />
+        ))}
+      </div>
+    ) : (
+      <p class="category-empty">이 카테고리에 해당하는 글이 없습니다.</p>
+    )}
+  </div>
+</BaseLayout>
+
+<style>
+  .category-container {
+    padding-block: 3rem;
+  }
+
+  .category-header {
+    margin-bottom: 2rem;
+  }
+
+  .category-back {
+    display: inline-block;
+    font-size: 0.875rem;
+    color: var(--fg-muted);
+    text-decoration: none;
+    margin-bottom: 0.75rem;
+    transition: color var(--transition-fast);
+  }
+  .category-back:hover {
+    color: var(--fg);
+  }
+
+  .category-title {
+    font-size: clamp(1.5rem, 3vw, 2rem);
+    font-weight: 800;
+    letter-spacing: -0.03em;
+    color: var(--fg);
+    margin-bottom: 0.25rem;
+    text-transform: capitalize;
+  }
+
+  .category-count {
+    font-size: 0.9375rem;
+    color: var(--fg-muted);
+    font-variant-numeric: tabular-nums;
+  }
+
+  .post-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 1.25rem;
+  }
+
+  .category-empty {
+    color: var(--fg-muted);
+    text-align: center;
+    padding: 4rem 0;
+  }
+
+  @media (max-width: 640px) {
+    .category-container {
+      padding-block: 2rem;
+    }
+    .post-list {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

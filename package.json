@@ -1,5 +1,5 @@
 {
-  "name": "strong-star",
+  "name": "tare-blog",
   "type": "module",
   "version": "0.0.1",
   "engines": {
@@ -7,11 +7,19 @@
   },
   "scripts": {
     "dev": "astro dev",
-    "build": "astro build",
+    "build": "astro build && pagefind --site dist",
     "preview": "astro preview",
     "astro": "astro"
   },
   "dependencies": {
+    "@astrojs/mdx": "^5.0.4",
+    "@astrojs/rss": "^4.0.18",
+    "@astrojs/sitemap": "^3.7.2",
+    "@vercel/analytics": "^2.0.1",
     "astro": "^6.3.1"
+  },
+  "devDependencies": {
+    "pagefind": "^1.5.2",
+    "pretendard": "^1.3.9"
   }
 }

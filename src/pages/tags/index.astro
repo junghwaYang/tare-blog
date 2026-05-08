@@ -1,0 +1,129 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { getAllTags, getPostsByTag } from '../../utils/posts';
+import { SITE_TITLE } from '../../consts';
+
+const allTags = await getAllTags();
+
+// 각 태그별 글 수 계산
+const tagCounts = new Map<string, number>();
+for (const tag of allTags) {
+  const posts = await getPostsByTag(tag);
+  tagCounts.set(tag, posts.length);
+}
+
+const title = `태그 — ${SITE_TITLE}`;
+const description = `총 ${allTags.length}개의 태그가 있습니다.`;
+---
+
+<BaseLayout title={title} description={description}>
+  <div class="container tags-container">
+    <header class="tags-header">
+      <h1 class="tags-title">태그</h1>
+      <p class="tags-count">{allTags.length}개</p>
+    </header>
+
+    {allTags.length > 0 ? (
+      <ul class="tag-list" role="list">
+        {allTags.map((tag) => (
+          <li>
+            <a href={`/tags/${tag}`} class="tag-item">
+              <span class="tag-name">{tag}</span>
+              <span class="tag-badge">{tagCounts.get(tag)}</span>
+            </a>
+          </li>
+        ))}
+      </ul>
+    ) : (
+      <p class="tags-empty">태그가 없습니다.</p>
+    )}
+  </div>
+</BaseLayout>
+
+<style>
+  .tags-container {
+    padding-block: 3rem;
+  }
+
+  .tags-header {
+    display: flex;
+    align-items: baseline;
+    gap: 0.75rem;
+    margin-bottom: 2rem;
+  }
+
+  .tags-title {
+    font-size: clamp(1.5rem, 3vw, 2rem);
+    font-weight: 800;
+    letter-spacing: -0.03em;
+    color: var(--fg);
+  }
+
+  .tags-count {
+    font-size: 0.9375rem;
+    color: var(--fg-muted);
+    font-variant-numeric: tabular-nums;
+  }
+
+  .tag-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.625rem;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .tag-item {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.375rem;
+    padding: 0.375rem 0.875rem;
+    border: 1px solid var(--border);
+    border-radius: var(--radius-full, 9999px);
+    text-decoration: none;
+    color: var(--fg);
+    font-size: 0.9375rem;
+    transition:
+      border-color var(--transition-fast),
+      background-color var(--transition-fast),
+      color var(--transition-fast);
+  }
+
+  .tag-item:hover {
+    border-color: var(--accent);
+    background-color: var(--bg-subtle);
+    color: var(--accent);
+  }
+
+  .tag-item:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 3px;
+  }
+
+  .tag-name {
+    font-weight: 500;
+  }
+
+  .tag-badge {
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: var(--fg-muted);
+    background-color: var(--bg-subtle);
+    border-radius: var(--radius-full, 9999px);
+    padding: 0.1em 0.5em;
+    font-variant-numeric: tabular-nums;
+  }
+
+  .tags-empty {
+    color: var(--fg-muted);
+    text-align: center;
+    padding: 4rem 0;
+  }
+
+  @media (max-width: 640px) {
+    .tags-container {
+      padding-block: 2rem;
+    }
+  }
+</style>

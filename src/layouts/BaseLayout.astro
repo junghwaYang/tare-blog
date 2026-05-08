@@ -1,0 +1,153 @@
+---
+import { SITE_TITLE, SITE_DESCRIPTION, SITE_URL, AUTHOR } from '../consts';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import { ClientRouter } from 'astro:transitions';
+import '../styles/global.css';
+
+interface Props {
+  title?: string;
+  description?: string;
+  ogImage?: string;
+  canonical?: string;
+  type?: 'website' | 'article';
+  pubDate?: Date;
+  updatedDate?: Date;
+  category?: string;
+  tags?: string[];
+}
+
+const {
+  title,
+  description = SITE_DESCRIPTION,
+  ogImage = '/og-default.png',
+  canonical,
+  type = 'website',
+  pubDate,
+  updatedDate,
+  category,
+  tags = [],
+} = Astro.props;
+
+const pageTitle = title ? `${title} — ${SITE_TITLE}` : SITE_TITLE;
+const canonicalURL = canonical
+  ? new URL(canonical, SITE_URL).href
+  : new URL(Astro.url.pathname, SITE_URL).href;
+const ogImageURL = new URL(ogImage, SITE_URL).href;
+---
+
+<!doctype html>
+<html lang="ko">
+  <head>
+    <!-- FOUC 방지: 모든 외부 CSS link보다 먼저 실행 -->
+    <script is:inline>
+      (function () {
+        try {
+          var stored = localStorage.getItem('theme');
+          var sysDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+          var theme = stored ? stored : sysDark ? 'dark' : 'light';
+          document.documentElement.dataset.theme = theme;
+        } catch (e) {
+          document.documentElement.dataset.theme = 'light';
+        }
+      })();
+    </script>
+
+    <!-- 기본 메타 -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="generator" content={Astro.generator} />
+
+    <!-- 파비콘 -->
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" href="/favicon.ico" />
+
+    <!-- Pretendard preload (대표 subset 파일 — 라틴+기호 포함 0번) -->
+    <link
+      rel="preload"
+      href="/fonts/woff2-dynamic-subset/PretendardVariable.subset.0.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin="anonymous"
+    />
+
+    <!-- SEO -->
+    <title>{pageTitle}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonicalURL} />
+
+    <!-- OG -->
+    <meta property="og:type" content={type} />
+    <meta property="og:url" content={canonicalURL} />
+    <meta property="og:title" content={pageTitle} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={ogImageURL} />
+    <meta property="og:locale" content="ko_KR" />
+    <meta property="og:site_name" content={SITE_TITLE} />
+    {type === 'article' && pubDate && (
+      <meta property="og:article:published_time" content={pubDate.toISOString()} />
+    )}
+    {type === 'article' && updatedDate && (
+      <meta property="og:article:modified_time" content={updatedDate.toISOString()} />
+    )}
+    {type === 'article' && category && (
+      <meta property="og:article:section" content={category} />
+    )}
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={pageTitle} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={ogImageURL} />
+
+    <!-- RSS -->
+    <link
+      rel="alternate"
+      type="application/rss+xml"
+      title={`${SITE_TITLE} RSS`}
+      href="/rss.xml"
+    />
+
+    <!-- Sitemap -->
+    <link rel="sitemap" href="/sitemap-index.xml" />
+
+    <!-- theme-color -->
+    <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)" />
+    <meta name="theme-color" content="#0d0d0d" media="(prefers-color-scheme: dark)" />
+
+    <!-- JSON-LD (각 페이지에서 주입) -->
+    <slot name="jsonld" />
+
+    <!-- View Transitions (Astro 6.x) -->
+    <ClientRouter />
+  </head>
+  <body>
+    <a class="skip-to-content" href="#main-content">본문 바로가기</a>
+    <Header transition:persist />
+    <main id="main-content" class="page-enter">
+      <slot />
+    </main>
+    <Footer />
+
+    {import.meta.env.PROD && (
+      <script>
+        import { inject } from '@vercel/analytics';
+        inject();
+      </script>
+    )}
+
+    <!-- View Transitions: 페이지 교체 후 다크모드 재적용 (FOUC 방지) -->
+    <script is:inline>
+      document.addEventListener('astro:after-swap', function () {
+        try {
+          var stored = localStorage.getItem('theme');
+          var sysDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+          var theme = stored ? stored : sysDark ? 'dark' : 'light';
+          document.documentElement.dataset.theme = theme;
+        } catch (e) {
+          document.documentElement.dataset.theme = 'light';
+        }
+      });
+    </script>
+  </body>
+</html>

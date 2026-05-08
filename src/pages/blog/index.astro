@@ -1,0 +1,99 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import PostCard from '../../components/PostCard.astro';
+import Pagination from '../../components/Pagination.astro';
+import Search from '../../components/Search.astro';
+import { getPosts } from '../../utils/posts';
+import { SITE_TITLE } from '../../consts';
+
+const POSTS_PER_PAGE = 10;
+const allPosts = await getPosts();
+const lastPage = Math.max(1, Math.ceil(allPosts.length / POSTS_PER_PAGE));
+const posts = allPosts.slice(0, POSTS_PER_PAGE);
+
+const title = `글 목록 — ${SITE_TITLE}`;
+const description = `총 ${allPosts.length}편의 글이 있습니다.`;
+---
+
+<BaseLayout title={title} description={description}>
+  <div class="container blog-container">
+    <header class="blog-header">
+      <h1 class="blog-title">모든 글</h1>
+      <p class="blog-count">{allPosts.length}편</p>
+    </header>
+
+    <div class="blog-search">
+      <Search />
+    </div>
+
+    {posts.length > 0 ? (
+      <div class="post-list">
+        {posts.map((post) => (
+          <PostCard post={post} />
+        ))}
+      </div>
+    ) : (
+      <p class="blog-empty">아직 게시된 글이 없습니다.</p>
+    )}
+
+    <Pagination
+      currentPage={1}
+      lastPage={lastPage}
+      urlPrev={undefined}
+      urlNext={lastPage > 1 ? '/blog/page/2' : undefined}
+      basePath="/blog/page"
+    />
+  </div>
+</BaseLayout>
+
+<style>
+  .blog-container {
+    padding-block: 3rem;
+  }
+
+  .blog-header {
+    display: flex;
+    align-items: baseline;
+    gap: 0.75rem;
+    margin-bottom: 2rem;
+  }
+
+  .blog-title {
+    font-size: clamp(1.5rem, 3vw, 2rem);
+    font-weight: 800;
+    letter-spacing: -0.03em;
+    color: var(--fg);
+  }
+
+  .blog-count {
+    font-size: 0.9375rem;
+    color: var(--fg-muted);
+    font-variant-numeric: tabular-nums;
+  }
+
+  .post-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 1.25rem;
+  }
+
+  .blog-search {
+    margin-bottom: 2.5rem;
+  }
+
+  .blog-empty {
+    color: var(--fg-muted);
+    font-size: 1rem;
+    text-align: center;
+    padding: 4rem 0;
+  }
+
+  @media (max-width: 640px) {
+    .blog-container {
+      padding-block: 2rem;
+    }
+    .post-list {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

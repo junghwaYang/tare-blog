@@ -1,0 +1,64 @@
+---
+title: "React Server Components 핵심 정리"
+description: "React Server Components(RSC)의 동작 원리와 클라이언트 컴포넌트와의 경계 설정 방법을 코드 예시와 함께 설명합니다."
+pubDate: 2026-05-05
+tags: ["react", "rsc", "nextjs"]
+category: "frontend"
+slug: "react-server-components"
+draft: false
+---
+
+## RSC란?
+
+React Server Components는 서버에서만 렌더링되는 컴포넌트입니다. 번들 크기에 포함되지 않고, 데이터베이스나 파일시스템에 직접 접근할 수 있습니다.
+
+## 서버 vs 클라이언트 컴포넌트
+
+| 특성 | 서버 컴포넌트 | 클라이언트 컴포넌트 |
+|---|---|---|
+| 번들 포함 | 아니오 | 예 |
+| useState/useEffect | 불가 | 가능 |
+| DB 직접 접근 | 가능 | 불가 |
+| 브라우저 API | 불가 | 가능 |
+
+## 기본 패턴
+
+서버 컴포넌트는 `async` 함수로 작성하고 데이터를 직접 fetch합니다.
+
+```tsx
+// ServerComponent.tsx (기본값: 서버 컴포넌트)
+async function PostList() {
+  const posts = await fetch('/api/posts').then(r => r.json());
+  return (
+    <ul>
+      {posts.map((post: { id: string; title: string }) => (
+        <li key={post.id}>{post.title}</li>
+      ))}
+    </ul>
+  );
+}
+```
+
+클라이언트 컴포넌트는 파일 상단에 `'use client'` 지시어를 선언합니다.
+
+```tsx
+// ClientComponent.tsx
+'use client';
+
+import { useState } from 'react';
+
+export function LikeButton({ postId }: { postId: string }) {
+  const [liked, setLiked] = useState(false);
+  return (
+    <button onClick={() => setLiked(!liked)}>
+      {liked ? '좋아요 취소' : '좋아요'}
+    </button>
+  );
+}
+```
+
+## 컴포넌트 트리 구성 원칙
+
+서버 컴포넌트가 클라이언트 컴포넌트를 import할 수 있지만, 반대 방향은 불가합니다. `children` props를 통한 합성 패턴으로 해결합니다.
+
+Next.js App Router에서는 기본값이 서버 컴포넌트이므로, 클라이언트 상태가 필요한 컴포넌트에만 `'use client'`를 선언하면 됩니다.

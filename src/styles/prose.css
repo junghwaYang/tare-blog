@@ -1,0 +1,233 @@
+/* ==========================================================================
+   prose.css — 마크다운 본문 스타일
+   .prose 클래스 스코프 — BlogPost.astro에서 사용
+   ========================================================================== */
+
+.prose {
+  max-width: var(--prose-width, 68ch);
+  color: var(--fg);
+  font-size: 1rem;
+  line-height: 1.8;
+  letter-spacing: -0.01em;
+  word-break: keep-all;
+  overflow-wrap: break-word;
+}
+
+/* ── 단락 ────────────────────────────────────────────────────────── */
+.prose p {
+  margin-top: 0;
+  margin-bottom: 1.5rem;
+}
+.prose p:last-child {
+  margin-bottom: 0;
+}
+
+/* ── 제목 ────────────────────────────────────────────────────────── */
+.prose h1,
+.prose h2,
+.prose h3,
+.prose h4,
+.prose h5,
+.prose h6 {
+  font-weight: 700;
+  line-height: 1.3;
+  letter-spacing: -0.02em;
+  color: var(--fg);
+  margin-top: 2.5rem;
+  margin-bottom: 0.75rem;
+  word-break: keep-all;
+  /* sticky 헤더(60px) + 여유 16px 가림 방지 */
+  scroll-margin-top: 76px;
+}
+
+.prose h1 { font-size: 2rem; }
+.prose h2 {
+  font-size: 1.5rem;
+  padding-bottom: 0.4rem;
+  border-bottom: 1px solid var(--border);
+}
+.prose h3 { font-size: 1.25rem; }
+.prose h4 { font-size: 1.1rem; }
+.prose h5,
+.prose h6 { font-size: 1rem; color: var(--fg-muted); }
+
+/* 첫 번째 자식은 상단 여백 제거 */
+.prose > *:first-child {
+  margin-top: 0;
+}
+
+/* ── 링크 ────────────────────────────────────────────────────────── */
+.prose a {
+  color: var(--accent);
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+  transition: color var(--transition-fast);
+}
+.prose a:hover {
+  color: var(--accent-hover);
+}
+.prose a:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+  border-radius: var(--radius-sm);
+}
+
+/* ── 목록 ────────────────────────────────────────────────────────── */
+.prose ul,
+.prose ol {
+  padding-left: 1.75rem;
+  margin-bottom: 1.5rem;
+}
+.prose li {
+  margin-bottom: 0.375rem;
+}
+.prose li > ul,
+.prose li > ol {
+  margin-top: 0.375rem;
+  margin-bottom: 0;
+}
+.prose ul { list-style-type: disc; }
+.prose ol { list-style-type: decimal; }
+
+/* ── 인용문 ──────────────────────────────────────────────────────── */
+.prose blockquote {
+  margin: 1.75rem 0;
+  padding: 1rem 1.25rem;
+  border-left: 3px solid var(--accent);
+  background-color: var(--bg-subtle);
+  border-radius: 0 var(--radius-md) var(--radius-md) 0;
+  color: var(--fg-muted);
+  font-style: italic;
+}
+.prose blockquote p {
+  margin-bottom: 0;
+}
+.prose blockquote p + p {
+  margin-top: 0.75rem;
+}
+
+/* ── 인라인 코드 ─────────────────────────────────────────────────── */
+.prose :not(pre) > code {
+  background-color: var(--code-bg);
+  color: var(--code-fg);
+  padding: 0.15em 0.4em;
+  border-radius: var(--radius-sm);
+  font-size: 0.875em;
+  font-family:
+    'Fira Code',
+    'JetBrains Mono',
+    'Cascadia Code',
+    ui-monospace,
+    'Menlo',
+    monospace;
+  font-feature-settings: 'liga' 1, 'calt' 1;
+  white-space: nowrap;
+}
+
+/* ── 코드 블록 (Shiki) ───────────────────────────────────────────── */
+.prose pre {
+  margin: 1.75rem 0;
+  padding: 1.25rem 1.5rem;
+  border-radius: var(--radius-md);
+  overflow-x: auto;
+  border: 1px solid var(--border);
+  font-size: 0.875rem;
+  line-height: 1.65;
+  tab-size: 2;
+}
+.prose pre code {
+  background: none;
+  padding: 0;
+  border-radius: 0;
+  font-size: inherit;
+  white-space: pre;
+}
+
+/* ── 수평선 ──────────────────────────────────────────────────────── */
+.prose hr {
+  margin: 2.5rem 0;
+  border: none;
+  border-top: 1px solid var(--border);
+}
+
+/* ── 표 ──────────────────────────────────────────────────────────── */
+.prose table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1.75rem 0;
+  font-size: 0.9375rem;
+  overflow-x: auto;
+  display: block;
+}
+.prose thead {
+  background-color: var(--bg-subtle);
+}
+.prose th {
+  text-align: left;
+  font-weight: 600;
+  padding: 0.625rem 0.875rem;
+  border: 1px solid var(--border);
+  color: var(--fg);
+  white-space: nowrap;
+}
+.prose td {
+  padding: 0.625rem 0.875rem;
+  border: 1px solid var(--border);
+  vertical-align: top;
+}
+.prose tr:nth-child(even) td {
+  background-color: var(--bg-subtle);
+}
+
+/* ── 이미지 ──────────────────────────────────────────────────────── */
+.prose img {
+  border-radius: var(--radius-md);
+  margin: 1.75rem auto;
+  max-width: 100%;
+  height: auto;
+  box-shadow: var(--shadow-md);
+}
+.prose figure {
+  margin: 1.75rem 0;
+}
+.prose figcaption {
+  text-align: center;
+  color: var(--fg-muted);
+  font-size: 0.875rem;
+  margin-top: 0.5rem;
+}
+
+/* ── 강조 ────────────────────────────────────────────────────────── */
+.prose strong {
+  font-weight: 700;
+  color: var(--fg);
+}
+.prose em {
+  font-style: italic;
+  color: var(--fg-muted);
+}
+.prose mark {
+  background-color: var(--accent-subtle);
+  color: var(--fg);
+  padding: 0.1em 0.3em;
+  border-radius: var(--radius-sm);
+}
+
+/* ── 반응형 ──────────────────────────────────────────────────────── */
+@media (max-width: 640px) {
+  .prose {
+    font-size: 0.9375rem;
+  }
+  .prose h1 { font-size: 1.625rem; }
+  .prose h2 { font-size: 1.25rem; }
+  .prose h3 { font-size: 1.125rem; }
+  .prose pre {
+    padding: 1rem;
+    font-size: 0.8125rem;
+    border-radius: var(--radius-sm);
+    margin-inline: -1rem;
+    border-left: none;
+    border-right: none;
+  }
+}

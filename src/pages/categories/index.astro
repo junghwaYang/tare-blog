@@ -1,0 +1,129 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { getAllCategories, getPostsByCategory } from '../../utils/posts';
+import { SITE_TITLE } from '../../consts';
+
+const allCategories = await getAllCategories();
+
+// 각 카테고리별 글 수 계산
+const categoryCounts = new Map<string, number>();
+for (const category of allCategories) {
+  const posts = await getPostsByCategory(category);
+  categoryCounts.set(category, posts.length);
+}
+
+const title = `카테고리 — ${SITE_TITLE}`;
+const description = `총 ${allCategories.length}개의 카테고리가 있습니다.`;
+---
+
+<BaseLayout title={title} description={description}>
+  <div class="container categories-container">
+    <header class="categories-header">
+      <h1 class="categories-title">카테고리</h1>
+      <p class="categories-count">{allCategories.length}개</p>
+    </header>
+
+    {allCategories.length > 0 ? (
+      <ul class="category-list" role="list">
+        {allCategories.map((category) => (
+          <li>
+            <a href={`/categories/${category}`} class="category-item">
+              <span class="category-name">{category}</span>
+              <span class="category-badge">{categoryCounts.get(category)}</span>
+            </a>
+          </li>
+        ))}
+      </ul>
+    ) : (
+      <p class="categories-empty">카테고리가 없습니다.</p>
+    )}
+  </div>
+</BaseLayout>
+
+<style>
+  .categories-container {
+    padding-block: 3rem;
+  }
+
+  .categories-header {
+    display: flex;
+    align-items: baseline;
+    gap: 0.75rem;
+    margin-bottom: 2rem;
+  }
+
+  .categories-title {
+    font-size: clamp(1.5rem, 3vw, 2rem);
+    font-weight: 800;
+    letter-spacing: -0.03em;
+    color: var(--fg);
+  }
+
+  .categories-count {
+    font-size: 0.9375rem;
+    color: var(--fg-muted);
+    font-variant-numeric: tabular-nums;
+  }
+
+  .category-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.625rem;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .category-item {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.375rem;
+    padding: 0.375rem 0.875rem;
+    border: 1px solid var(--border);
+    border-radius: var(--radius-full, 9999px);
+    text-decoration: none;
+    color: var(--fg);
+    font-size: 0.9375rem;
+    transition:
+      border-color var(--transition-fast),
+      background-color var(--transition-fast),
+      color var(--transition-fast);
+  }
+
+  .category-item:hover {
+    border-color: var(--accent);
+    background-color: var(--bg-subtle);
+    color: var(--accent);
+  }
+
+  .category-item:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 3px;
+  }
+
+  .category-name {
+    font-weight: 500;
+  }
+
+  .category-badge {
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: var(--fg-muted);
+    background-color: var(--bg-subtle);
+    border-radius: var(--radius-full, 9999px);
+    padding: 0.1em 0.5em;
+    font-variant-numeric: tabular-nums;
+  }
+
+  .categories-empty {
+    color: var(--fg-muted);
+    text-align: center;
+    padding: 4rem 0;
+  }
+
+  @media (max-width: 640px) {
+    .categories-container {
+      padding-block: 2rem;
+    }
+  }
+</style>

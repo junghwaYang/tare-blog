@@ -1,0 +1,94 @@
+---
+import type { GetStaticPaths } from 'astro';
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import PostCard from '../../../components/PostCard.astro';
+import Pagination from '../../../components/Pagination.astro';
+import { getPosts } from '../../../utils/posts';
+import { SITE_TITLE } from '../../../consts';
+
+export const getStaticPaths: GetStaticPaths = async () => {
+  const POSTS_PER_PAGE = 10;
+  const allPosts = await getPosts();
+  const lastPage = Math.max(1, Math.ceil(allPosts.length / POSTS_PER_PAGE));
+
+  // page 1은 /blog/index.astro 가 담당하므로 2부터 생성
+  return Array.from({ length: Math.max(0, lastPage - 1) }, (_, i) => {
+    const page = i + 2;
+    return { params: { page: String(page) } };
+  });
+};
+
+const POSTS_PER_PAGE = 10;
+const allPosts = await getPosts();
+const lastPage = Math.max(1, Math.ceil(allPosts.length / POSTS_PER_PAGE));
+const currentPage = Number(Astro.params.page);
+const start = (currentPage - 1) * POSTS_PER_PAGE;
+const posts = allPosts.slice(start, start + POSTS_PER_PAGE);
+
+const title = `글 목록 ${currentPage}페이지 — ${SITE_TITLE}`;
+const description = `총 ${allPosts.length}편의 글 중 ${currentPage}페이지입니다.`;
+---
+
+<BaseLayout title={title} description={description}>
+  <div class="container blog-container">
+    <header class="blog-header">
+      <h1 class="blog-title">모든 글</h1>
+      <p class="blog-count">{allPosts.length}편</p>
+    </header>
+
+    <div class="post-list">
+      {posts.map((post) => (
+        <PostCard post={post} />
+      ))}
+    </div>
+
+    <Pagination
+      currentPage={currentPage}
+      lastPage={lastPage}
+      urlPrev={currentPage === 2 ? '/blog' : `/blog/page/${currentPage - 1}`}
+      urlNext={currentPage < lastPage ? `/blog/page/${currentPage + 1}` : undefined}
+      basePath="/blog/page"
+    />
+  </div>
+</BaseLayout>
+
+<style>
+  .blog-container {
+    padding-block: 3rem;
+  }
+
+  .blog-header {
+    display: flex;
+    align-items: baseline;
+    gap: 0.75rem;
+    margin-bottom: 2rem;
+  }
+
+  .blog-title {
+    font-size: clamp(1.5rem, 3vw, 2rem);
+    font-weight: 800;
+    letter-spacing: -0.03em;
+    color: var(--fg);
+  }
+
+  .blog-count {
+    font-size: 0.9375rem;
+    color: var(--fg-muted);
+    font-variant-numeric: tabular-nums;
+  }
+
+  .post-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 1.25rem;
+  }
+
+  @media (max-width: 640px) {
+    .blog-container {
+      padding-block: 2rem;
+    }
+    .post-list {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

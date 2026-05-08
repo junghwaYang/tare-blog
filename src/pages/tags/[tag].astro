@@ -1,0 +1,119 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import PostCard from '../../components/PostCard.astro';
+import { getAllTags, getPostsByTag } from '../../utils/posts';
+import { SITE_TITLE, SITE_URL } from '../../consts';
+
+export async function getStaticPaths() {
+  const allTags = await getAllTags();
+  return Promise.all(
+    allTags.map(async (tag) => {
+      const posts = await getPostsByTag(tag);
+      return {
+        params: { tag },
+        props: { tag, posts },
+      };
+    })
+  );
+}
+
+const { tag, posts } = Astro.props;
+
+const pageTitle = `#${tag}`;
+const description = `"${tag}" 태그가 붙은 글 ${posts.length}편`;
+
+const breadcrumbJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: '홈', item: SITE_URL },
+    { '@type': 'ListItem', position: 2, name: '태그', item: `${SITE_URL}/tags` },
+    { '@type': 'ListItem', position: 3, name: `#${tag}`, item: `${SITE_URL}/tags/${tag}` },
+  ],
+};
+---
+
+<BaseLayout title={pageTitle} description={description}>
+  <script slot="jsonld" type="application/ld+json" set:html={JSON.stringify(breadcrumbJsonLd)} />
+  <div class="container tag-container">
+    <header class="tag-header">
+      <a href="/tags" class="tag-back">← 모든 태그</a>
+      <h1 class="tag-title">
+        <span class="tag-hash">#</span>{tag}
+      </h1>
+      <p class="tag-count">{posts.length}편</p>
+    </header>
+
+    {posts.length > 0 ? (
+      <div class="post-list">
+        {posts.map((post) => (
+          <PostCard post={post} />
+        ))}
+      </div>
+    ) : (
+      <p class="tag-empty">이 태그에 해당하는 글이 없습니다.</p>
+    )}
+  </div>
+</BaseLayout>
+
+<style>
+  .tag-container {
+    padding-block: 3rem;
+  }
+
+  .tag-header {
+    margin-bottom: 2rem;
+  }
+
+  .tag-back {
+    display: inline-block;
+    font-size: 0.875rem;
+    color: var(--fg-muted);
+    text-decoration: none;
+    margin-bottom: 0.75rem;
+    transition: color var(--transition-fast);
+  }
+  .tag-back:hover {
+    color: var(--fg);
+  }
+
+  .tag-title {
+    font-size: clamp(1.5rem, 3vw, 2rem);
+    font-weight: 800;
+    letter-spacing: -0.03em;
+    color: var(--fg);
+    margin-bottom: 0.25rem;
+  }
+
+  .tag-hash {
+    color: var(--accent);
+    margin-right: 0.125em;
+  }
+
+  .tag-count {
+    font-size: 0.9375rem;
+    color: var(--fg-muted);
+    font-variant-numeric: tabular-nums;
+  }
+
+  .post-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 1.25rem;
+  }
+
+  .tag-empty {
+    color: var(--fg-muted);
+    text-align: center;
+    padding: 4rem 0;
+  }
+
+  @media (max-width: 640px) {
+    .tag-container {
+      padding-block: 2rem;
+    }
+    .post-list {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

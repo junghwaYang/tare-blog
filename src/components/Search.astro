@@ -1,0 +1,65 @@
+---
+// Search.astro — Pagefind UI 통합
+// dev 환경에서 /pagefind/ 리소스가 없어도 silent fail
+---
+
+<div class="search-wrapper" data-pagefind-ignore>
+  <div id="search"></div>
+</div>
+
+<style>
+  .search-wrapper {
+    width: 100%;
+    max-width: 600px;
+    margin-inline: auto;
+  }
+
+  /* Pagefind UI 커스텀 오버라이드 */
+  #search {
+    --pagefind-ui-scale: 0.9;
+    --pagefind-ui-primary: var(--accent);
+    --pagefind-ui-text: var(--fg);
+    --pagefind-ui-background: var(--bg);
+    --pagefind-ui-border: var(--border);
+    --pagefind-ui-tag: var(--bg-subtle);
+    --pagefind-ui-border-width: 1px;
+    --pagefind-ui-border-radius: var(--radius-md, 6px);
+    --pagefind-ui-font: var(--font-sans, 'Pretendard Variable', sans-serif);
+  }
+</style>
+
+<script is:inline>
+  (function () {
+    function initPagefind() {
+      try {
+        import('/pagefind/pagefind-ui.js')
+          .then(function (module) {
+            var PagefindUI = module.PagefindUI;
+            new PagefindUI({
+              element: '#search',
+              showSubResults: true,
+              excerptLength: 30,
+              showImages: false,
+              resetStyles: false,
+              translations: {
+                placeholder: '검색...',
+                zero_results: '결과 없음',
+                many_results: '[COUNT]건 결과',
+              },
+            });
+          })
+          .catch(function () {
+            // dev 환경: /pagefind/pagefind-ui.js 404 → silent
+          });
+      } catch (e) {
+        // silent
+      }
+    }
+
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', initPagefind);
+    } else {
+      initPagefind();
+    }
+  })();
+</script>

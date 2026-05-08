@@ -1,17 +1,119 @@
 ---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import PostCard from '../components/PostCard.astro';
+import { getPosts } from '../utils/posts';
+import { SITE_TITLE, SITE_DESCRIPTION, SITE_URL } from '../consts';
 
+const posts = await getPosts();
+const recentPosts = posts.slice(0, 6);
+
+const websiteJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'WebSite',
+  name: SITE_TITLE,
+  url: SITE_URL,
+  description: SITE_DESCRIPTION,
+  inLanguage: 'ko-KR',
+};
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="icon" href="/favicon.ico" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+<BaseLayout description={SITE_DESCRIPTION}>
+  <script slot="jsonld" type="application/ld+json" set:html={JSON.stringify(websiteJsonLd)} />
+  <div class="container home-container">
+    <section class="home-hero">
+      <h1 class="home-title">{SITE_TITLE}</h1>
+      <p class="home-desc">{SITE_DESCRIPTION}</p>
+    </section>
+
+    <section aria-labelledby="recent-posts-heading">
+      <h2 id="recent-posts-heading" class="section-heading">최근 글</h2>
+      <div class="post-grid">
+        {recentPosts.map((post) => (
+          <PostCard post={post} />
+        ))}
+      </div>
+      {posts.length > 6 && (
+        <div class="home-more">
+          <a href="/blog" class="btn-more">모든 글 보기</a>
+        </div>
+      )}
+    </section>
+  </div>
+</BaseLayout>
+
+<style>
+  .home-container {
+    padding-block: 4rem;
+  }
+
+  .home-hero {
+    margin-bottom: 4rem;
+  }
+
+  .home-title {
+    font-size: clamp(2rem, 5vw, 3rem);
+    font-weight: 800;
+    letter-spacing: -0.04em;
+    color: var(--fg);
+    margin-bottom: 0.75rem;
+  }
+
+  .home-desc {
+    font-size: 1.125rem;
+    color: var(--fg-muted);
+    line-height: 1.6;
+  }
+
+  .section-heading {
+    font-size: 1rem;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: var(--fg-muted);
+    margin-bottom: 1.5rem;
+  }
+
+  .post-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 1.25rem;
+  }
+
+  .home-more {
+    margin-top: 2rem;
+    text-align: center;
+  }
+
+  .btn-more {
+    display: inline-block;
+    padding: 0.625rem 1.5rem;
+    font-size: 0.9375rem;
+    font-weight: 600;
+    color: var(--fg);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-md);
+    text-decoration: none;
+    transition:
+      background-color var(--transition-fast),
+      border-color var(--transition-fast);
+  }
+
+  .btn-more:hover {
+    background-color: var(--bg-hover);
+    border-color: var(--border-strong);
+  }
+
+  .btn-more:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 3px;
+  }
+
+  @media (max-width: 640px) {
+    .home-container {
+      padding-block: 2.5rem;
+    }
+    .post-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>
