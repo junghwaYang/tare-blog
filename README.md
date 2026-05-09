@@ -1,5 +1,8 @@
 # 타래의 기술 노트
 
+[![Deployed on Vercel](https://img.shields.io/badge/Deployed-Vercel-black?logo=vercel)](https://tare-blog.vercel.app)
+[![GitHub](https://img.shields.io/badge/GitHub-junghwaYang%2Ftare--blog-181717?logo=github)](https://github.com/junghwaYang/tare-blog)
+
 한국어 기술 아카이빙·학습 기록 블로그. Astro v6 SSG + 로컬 마크다운 + Vercel 호스팅. 미니멀 타이포 디자인.
 
 ---
@@ -56,6 +59,8 @@ dist/
 ---
 
 ## 배포
+
+`main` 브랜치에 push하면 Vercel이 자동으로 빌드·배포합니다. 별도 설정 없이 git push 만으로 production 반영됩니다.
 
 Vercel에 연결하면 자동 배포됩니다. 환경변수 설정 불필요.
 
