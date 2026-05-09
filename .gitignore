@@ -25,3 +25,9 @@ pnpm-debug.log*
 
 # vercel
 .vercel
+
+# omc internal plans & metadata
+.omc/
+
+# environment variables (catch-all)
+.env*
