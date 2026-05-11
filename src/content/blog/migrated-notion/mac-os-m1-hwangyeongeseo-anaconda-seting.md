@@ -4,7 +4,7 @@ description: "해당 본문은 mac M1 환경에서 anaconda 설치 방법을 다
 pubDate: 2025-06-17T13:38:00.000Z
 updatedDate: 2025-06-17T14:01:00.000Z
 tags: []
-category: "study"
+category: "python"
 slug: "mac-os-m1-hwangyeongeseo-anaconda-seting"
 draft: false
 originalUrl: "https://www.notion.so/2154ef56099480938e82df694ea02f1f"

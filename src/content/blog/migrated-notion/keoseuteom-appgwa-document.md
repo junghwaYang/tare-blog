@@ -4,7 +4,7 @@ description: "App.js Next에서는 App.js 라는 파일에서 공통으로 사�
 pubDate: 2024-11-22T05:07:00.000Z
 updatedDate: 2025-06-17T02:55:00.000Z
 tags: []
-category: "study"
+category: "react"
 slug: "keoseuteom-appgwa-document"
 draft: false
 originalUrl: "https://www.notion.so/8101eb97552244b0b62454c37707fff1"

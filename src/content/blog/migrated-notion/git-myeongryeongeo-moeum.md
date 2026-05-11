@@ -4,7 +4,7 @@ description: "git reset 파일 이름 : staging area에 올렸던 파일 다시 
 pubDate: 2024-09-02T07:56:00.000Z
 updatedDate: 2025-06-17T02:46:00.000Z
 tags: []
-category: "study"
+category: "git"
 slug: "git-myeongryeongeo-moeum"
 draft: false
 originalUrl: "https://www.notion.so/2c9f496b14164b9495fe0b2f5670909e"

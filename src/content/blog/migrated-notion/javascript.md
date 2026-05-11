@@ -4,7 +4,7 @@ description: "학습 내용 자세한 객체와 배열 객체란 💡 객체란 
 pubDate: 2024-10-08T16:38:00.000Z
 updatedDate: 2025-06-17T02:49:00.000Z
 tags: []
-category: "study"
+category: "javascript"
 slug: "javascript"
 draft: false
 originalUrl: "https://www.notion.so/1194ef5609948040ad5bed8170c1adcf"

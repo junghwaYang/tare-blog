@@ -4,7 +4,7 @@ description: "정보보안에서 최종 목표가 “웹 취약점 분석가(웹
 pubDate: 2025-11-19T18:59:00.000Z
 updatedDate: 2025-11-27T16:13:00.000Z
 tags: []
-category: "study"
+category: "security"
 slug: "jeongboboan-gicho"
 draft: false
 originalUrl: "https://www.notion.so/2b04ef56099480969355dcedab81564f"

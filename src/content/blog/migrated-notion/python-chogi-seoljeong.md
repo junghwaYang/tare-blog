@@ -4,7 +4,7 @@ description: "강의에서 사용하는 인텔릭제이 설정 아래 리스트 
 pubDate: 2025-06-17T11:17:00.000Z
 updatedDate: 2025-06-17T14:03:00.000Z
 tags: []
-category: "study"
+category: "python"
 slug: "python-chogi-seoljeong"
 draft: false
 originalUrl: "https://www.notion.so/2154ef56099480b8bcd4e9903e53f74b"

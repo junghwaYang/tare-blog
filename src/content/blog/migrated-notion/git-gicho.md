@@ -4,7 +4,7 @@ description: "repository와 commit 1. 레포지토리(repository) : 저장소 �
 pubDate: 2025-06-17T02:40:00.000Z
 updatedDate: 2025-06-17T02:45:00.000Z
 tags: []
-category: "study"
+category: "git"
 slug: "git-gicho"
 draft: false
 originalUrl: "https://www.notion.so/2154ef56099480a7b82de0de1f550dc0"

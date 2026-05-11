@@ -4,7 +4,7 @@ description: "들어가며 Next에서는 간단하게 페이지 라우터를 이
 pubDate: 2024-11-29T18:41:00.000Z
 updatedDate: 2025-06-17T02:55:00.000Z
 tags: []
-category: "study"
+category: "react"
 slug: "api-rauteu-mandeulgi"
 draft: false
 originalUrl: "https://www.notion.so/14d4ef560994809980daf47761baf996"

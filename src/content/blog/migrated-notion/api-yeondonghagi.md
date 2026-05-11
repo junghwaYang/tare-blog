@@ -4,7 +4,7 @@ description: "next의 api 연동은 react와 크게 차이가 없다. 하지만 
 pubDate: 2024-11-21T05:05:00.000Z
 updatedDate: 2025-06-17T02:55:00.000Z
 tags: []
-category: "study"
+category: "react"
 slug: "api-yeondonghagi"
 draft: false
 originalUrl: "https://www.notion.so/1454ef56099480a2b9dac1909f98f968"

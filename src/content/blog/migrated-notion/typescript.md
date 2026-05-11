@@ -4,7 +4,7 @@ description: "📌 타입 스크립트란? TypeScript는 JavaScript의 상위 �
 pubDate: 2024-11-09T02:16:00.000Z
 updatedDate: 2025-06-17T02:49:00.000Z
 tags: []
-category: "study"
+category: "typescript"
 slug: "typescript"
 draft: false
 originalUrl: "https://www.notion.so/1394ef56099480a78addffdf4f044615"

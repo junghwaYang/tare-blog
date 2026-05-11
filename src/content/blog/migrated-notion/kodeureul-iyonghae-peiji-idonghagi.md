@@ -4,7 +4,7 @@ description: "우선 next.js에서는 page폴더를 기준으로 path 경로를 
 pubDate: 2024-11-20T07:29:00.000Z
 updatedDate: 2025-06-17T02:55:00.000Z
 tags: []
-category: "study"
+category: "react"
 slug: "kodeureul-iyonghae-peiji-idonghagi"
 draft: false
 originalUrl: "https://www.notion.so/1444ef5609948012a5d6ccee3332c970"

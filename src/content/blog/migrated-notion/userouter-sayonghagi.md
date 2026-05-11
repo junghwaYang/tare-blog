@@ -4,7 +4,7 @@ description: "useRouter는 next에서 경로의 pram과 query를 가져오는데
 pubDate: 2024-11-19T10:03:00.000Z
 updatedDate: 2025-06-17T02:55:00.000Z
 tags: []
-category: "study"
+category: "react"
 slug: "userouter-sayonghagi"
 draft: false
 originalUrl: "https://www.notion.so/1434ef56099480849115ed2942346165"
