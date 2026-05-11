@@ -6,12 +6,219 @@
     {
       "source": "/(.*)",
       "headers": [
-        { "key": "X-Content-Type-Options", "value": "nosniff" },
-        { "key": "X-Frame-Options", "value": "DENY" },
-        { "key": "Referrer-Policy", "value": "strict-origin-when-cross-origin" },
-        { "key": "Permissions-Policy", "value": "camera=(), microphone=(), geolocation=()" },
-        { "key": "Content-Security-Policy", "value": "default-src 'self'; script-src 'self' 'unsafe-inline' https://va.vercel-scripts.com; style-src 'self' 'unsafe-inline'; font-src 'self'; img-src 'self' data:; connect-src 'self' https://vitals.vercel-insights.com" }
+        {
+          "key": "X-Content-Type-Options",
+          "value": "nosniff"
+        },
+        {
+          "key": "X-Frame-Options",
+          "value": "DENY"
+        },
+        {
+          "key": "Referrer-Policy",
+          "value": "strict-origin-when-cross-origin"
+        },
+        {
+          "key": "Permissions-Policy",
+          "value": "camera=(), microphone=(), geolocation=()"
+        },
+        {
+          "key": "Content-Security-Policy",
+          "value": "default-src 'self'; script-src 'self' 'unsafe-inline' https://va.vercel-scripts.com; style-src 'self' 'unsafe-inline'; font-src 'self'; img-src 'self' data:; connect-src 'self' https://vitals.vercel-insights.com"
+        }
       ]
+    }
+  ],
+  "redirects": [
+    {
+      "source": "/blog/deiteobeiseu-sqllite",
+      "destination": "/blog/deiteobeiseusqllite",
+      "permanent": true
+    },
+    {
+      "source": "/blog/diregtori-keomenteu-myeongryeongeo",
+      "destination": "/blog/direktori-keomenteu-myeongryeongeo",
+      "permanent": true
+    },
+    {
+      "source": "/blog/fcm-firebase-cloud-messaging-e-daehan-gibon-gaenyeom",
+      "destination": "/blog/fcmfirebase-cloud-messaginge-daehan-gibon-gaenyeom",
+      "permanent": true
+    },
+    {
+      "source": "/blog/ganguiyoyagbon",
+      "destination": "/blog/ganguiyoyakbon",
+      "permanent": true
+    },
+    {
+      "source": "/blog/gemini-cli-vs-claude-code-bigyo-bunseog",
+      "destination": "/blog/gemini-cli-vs-claude-code-bigyo-bunseok",
+      "permanent": true
+    },
+    {
+      "source": "/blog/gisul-myeonjeob-junbi",
+      "destination": "/blog/gisul-myeonjeop-junbi",
+      "permanent": true
+    },
+    {
+      "source": "/blog/jaba-yongeojib",
+      "destination": "/blog/jaba-yongeojip",
+      "permanent": true
+    },
+    {
+      "source": "/blog/jaeoegugmin-sosyeol-keomyuniti-peulraespom-gaebal-jeanseo",
+      "destination": "/blog/jaeoegukmin-sosyeol-keomyuniti-peulraespom-gaebal-jeanseo",
+      "permanent": true
+    },
+    {
+      "source": "/blog/java-chogeub",
+      "destination": "/blog/java-chogeup",
+      "permanent": true
+    },
+    {
+      "source": "/blog/java-junggeub",
+      "destination": "/blog/java-junggeup",
+      "permanent": true
+    },
+    {
+      "source": "/blog/jeongjeog-peiji-saengseonghagi",
+      "destination": "/blog/jeongjeok-peiji-saengseonghagi",
+      "permanent": true
+    },
+    {
+      "source": "/blog/keulraieonteueseo-deiteo-jugo-badgi",
+      "destination": "/blog/keulraieonteueseo-deiteo-jugo-batgi",
+      "permanent": true
+    },
+    {
+      "source": "/blog/meinpeiji-gesipan-baneunghyeong-web-peobeulrising-jeanseo",
+      "destination": "/blog/meinpeijigesipan-baneunghyeong-wep-peobeulrising-jeanseo",
+      "permanent": true
+    },
+    {
+      "source": "/blog/next-sijag",
+      "destination": "/blog/next-sijak",
+      "permanent": true
+    },
+    {
+      "source": "/blog/nonrijeog-churon-suhag-munje-haegyeol-dadangye-churon-gpqa-math-benchimakeu-gwan",
+      "destination": "/blog/nonrijeok-churon-suhak-munje-haegyeol-dadangye-churon",
+      "permanent": true
+    },
+    {
+      "source": "/blog/react-next-teseuteu-jadonghwa-peureimwokeu",
+      "destination": "/blog/reactnext-teseuteu-jadonghwa-peureimwokeu",
+      "permanent": true
+    },
+    {
+      "source": "/blog/ridairegteu-hagi",
+      "destination": "/blog/ridairekteu-hagi",
+      "permanent": true
+    },
+    {
+      "source": "/blog/tare-log",
+      "destination": "/blog/tarelog",
+      "permanent": true
+    },
+    {
+      "source": "/blog/tib",
+      "destination": "/blog/tip",
+      "permanent": true
+    },
+    {
+      "source": "/blog/toseu-on-air-paeseuteuteuraeg-gwajejeonhyeong-hoego",
+      "destination": "/blog/toseu-on-air-paeseuteuteuraek-gwajejeonhyeong-hoego",
+      "permanent": true
+    },
+    {
+      "source": "/blog/toseu-ux-eosiseuteondeu-myeonjeob-hoego",
+      "destination": "/blog/toseu-ux-eosiseuteondeu-myeonjeop-hoego",
+      "permanent": true
+    },
+    {
+      "source": "/blog/yunigseu-keomaendeuran",
+      "destination": "/blog/yunikseu-keomaendeuran",
+      "permanent": true
+    },
+    {
+      "source": "/blog/05jang-pyohyeonsiggwa-mun",
+      "destination": "/blog/05jang-pyohyeonsikgwa-mun",
+      "permanent": true
+    },
+    {
+      "source": "/blog/06jang-deiteo-taib",
+      "destination": "/blog/06jang-deiteo-taip",
+      "permanent": true
+    },
+    {
+      "source": "/blog/240105-04-byeonsu06-deiteo-taib",
+      "destination": "/blog/240105-04byeonsu06deiteo-taip",
+      "permanent": true
+    },
+    {
+      "source": "/blog/cascading",
+      "destination": "/blog/cascading-iran",
+      "permanent": true
+    },
+    {
+      "source": "/blog/ceoneo-banbogmunwhile-mun",
+      "destination": "/blog/ceoneo-banbokmunwhile-mun",
+      "permanent": true
+    },
+    {
+      "source": "/blog/ceoneo-byeonsuwa-taib",
+      "destination": "/blog/ceoneo-byeonsuwa-taip",
+      "permanent": true
+    },
+    {
+      "source": "/blog/ceoneo-ceoneoro-mueoseul-hal-su-isseulgga",
+      "destination": "/blog/ceoneo-ceoneoro-mueoseul-hal-su-isseulkka",
+      "permanent": true
+    },
+    {
+      "source": "/blog/ceoneo-jogeonmun-ifmun",
+      "destination": "/blog/ceoneo-jogeonmun-ifmun-bigyononri-yeonsan",
+      "permanent": true
+    },
+    {
+      "source": "/blog/ceoneo-yeonsanja-gicho-sachigyeonsan",
+      "destination": "/blog/ceoneo-yeonsanja-gicho-sachikyeonsan",
+      "permanent": true
+    },
+    {
+      "source": "/blog/gpt-3-5reul-iyonghan-ai-chaesbos-gaebal-girog",
+      "destination": "/blog/gpt-35reul-iyonghan-ai-chaesbos-gaebal-girok",
+      "permanent": true
+    },
+    {
+      "source": "/blog/ceoneo-byeonsuwa-taib-tistory",
+      "destination": "/blog/ceoneo-byeonsuwa-taip-tistory",
+      "permanent": true
+    },
+    {
+      "source": "/blog/ceoneo-ceoneoro-mwol-hal-su-isseulgga",
+      "destination": "/blog/ceoneo-ceoneoro-mwol-hal-su-isseulkka",
+      "permanent": true
+    },
+    {
+      "source": "/blog/ceoneo-yeonsanja-gicho-sachigyeonsan-tistory",
+      "destination": "/blog/ceoneo-yeonsanja-gicho-sachikyeonsan-tistory",
+      "permanent": true
+    },
+    {
+      "source": "/blog/chasedae-eijeontig-gaebal-hwangyeong-ai-ide-ui-akitegcheo-mich-wokeupeulrou-bigyo-bunseog",
+      "destination": "/blog/chasedae-eijeontik-gaebal-hwangyeongai-ideui-akitekcheo",
+      "permanent": true
+    },
+    {
+      "source": "/blog/deiteo-tongsinui-gibonjeogin-guseongyoso",
+      "destination": "/blog/deiteo-tongsinui-gibonjeokin-guseongyoso",
+      "permanent": true
+    },
+    {
+      "source": "/blog/keompyuteo-yeogsawa-bunryu",
+      "destination": "/blog/keompyuteo-yeoksawa-bunryu",
+      "permanent": true
     }
   ]
 }

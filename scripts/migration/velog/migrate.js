@@ -13,6 +13,7 @@ import path from 'path';
 import https from 'https';
 import http from 'http';
 import { fileURLToPath } from 'url';
+import { slugify } from '../lib/slugify.js';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const BLOG_ROOT = path.resolve(__dirname, '../../../');
@@ -76,46 +77,12 @@ function graphql(query, variables = {}) {
 }
 
 // ---------------------------------------------------------------------------
-// slug 변환 (한글 → 로마자)
+// slug 변환 — lib/slugify.js (hangul-romanize 기반) 사용
 // ---------------------------------------------------------------------------
 
-const HANGUL_INITIALS = [
-  'g','gg','n','d','dd','r','m','b','bb','s','ss','','j','jj','ch','k','t','p','h'
-];
-const HANGUL_VOWELS = [
-  'a','ae','ya','yae','eo','e','yeo','ye','o','wa','wae','oe','yo','u','wo','we','wi','yu','eu','ui','i'
-];
-const HANGUL_FINALS = [
-  '','g','gg','gs','n','nj','nh','d','l','lg','lm','lb','ls','lt','lp','lh','m','b','bs','s','ss','ng','j','ch','k','t','p','h'
-];
-
-function hangulToRoman(char) {
-  const code = char.charCodeAt(0) - 0xAC00;
-  if (code < 0 || code > 11171) return char;
-  const initial = Math.floor(code / (21 * 28));
-  const vowel = Math.floor((code % (21 * 28)) / 28);
-  const final = code % 28;
-  return HANGUL_INITIALS[initial] + HANGUL_VOWELS[vowel] + HANGUL_FINALS[final];
-}
-
-function koreanToSlug(text) {
-  let result = '';
-  for (const ch of text) {
-    const code = ch.charCodeAt(0);
-    if (code >= 0xAC00 && code <= 0xD7A3) {
-      result += hangulToRoman(ch);
-    } else if (/[a-zA-Z0-9]/.test(ch)) {
-      result += ch.toLowerCase();
-    } else {
-      result += '-';
-    }
-  }
-  return result.replace(/-+/g, '-').replace(/^-|-$/g, '');
-}
-
 function normalizeSlug(urlSlug) {
-  if (/^[a-z0-9-]+$/.test(urlSlug)) return urlSlug;
-  return koreanToSlug(urlSlug);
+  if (!urlSlug) return 'untitled';
+  return slugify(urlSlug) || slugify(urlSlug.replace(/-/g, ' ')) || urlSlug;
 }
 
 // slug 중복 방지
