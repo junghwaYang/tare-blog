@@ -39,14 +39,19 @@ const pubDateISO = pubDate.toISOString();
 const updatedDateISO = updatedDate?.toISOString();
 
 const canonicalURL = new URL(Astro.url.pathname, SITE_URL).href;
-const ogImageURL = ogImage ? new URL(ogImage, SITE_URL).href : new URL('/og-default.png', SITE_URL).href;
+// og:image 우선순위:
+// 1. frontmatter에 ogImage 명시 → 그대로 사용
+// 2. 자동생성 경로 /og/<slug>.png
+// 3. 폴백: /og-default.png (BaseLayout 기본값)
+const resolvedOgImage = ogImage ?? `/og/${post.data.slug}.png`;
+const ogImageURL = new URL(resolvedOgImage, SITE_URL).href;
 
 const articleJsonLd = {
   '@context': 'https://schema.org',
   '@type': 'Article',
   headline: title,
   description: description,
-  image: ogImageURL,
+  image: new URL(resolvedOgImage, SITE_URL).href,
   datePublished: pubDateISO,
   dateModified: updatedDateISO ?? pubDateISO,
   author: { '@type': 'Person', name: AUTHOR },
@@ -58,7 +63,7 @@ const articleJsonLd = {
 <BaseLayout
   title={title}
   description={description}
-  ogImage={ogImage}
+  ogImage={resolvedOgImage}
   type="article"
   pubDate={pubDate}
   updatedDate={updatedDate}
