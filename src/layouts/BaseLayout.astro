@@ -136,7 +136,7 @@ const ogImageURL = new URL(ogImage, SITE_URL).href;
       </script>
     )}
 
-    <!-- View Transitions: 페이지 교체 후 다크모드 재적용 (FOUC 방지) -->
+    <!-- View Transitions: 페이지 교체 후 다크모드 재적용 (FOUC 방지) + main/container 너비 잔재 정리 -->
     <script is:inline>
       document.addEventListener('astro:after-swap', function () {
         try {
@@ -147,6 +147,21 @@ const ogImageURL = new URL(ogImage, SITE_URL).href;
         } catch (e) {
           document.documentElement.dataset.theme = 'light';
         }
+
+        // View Transition swap 후 main/container의 inline width 잔재 제거
+        // → GNB 페이지 이동 후 홈으로 돌아왔을 때 컨테이너가 1200px로 복원되도록 보장
+        try {
+          var mainEl = document.getElementById('main-content');
+          if (mainEl) {
+            mainEl.style.width = '';
+            mainEl.style.maxWidth = '';
+          }
+          var containers = document.querySelectorAll('main .container');
+          for (var i = 0; i < containers.length; i++) {
+            containers[i].style.width = '';
+            containers[i].style.maxWidth = '';
+          }
+        } catch (e) {}
       });
     </script>
   </body>

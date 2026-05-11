@@ -115,6 +115,15 @@ html {
   -webkit-text-size-adjust: 100%;
   text-size-adjust: 100%;
   scroll-behavior: smooth;
+  /* 스크롤바 공간 항상 예약 → View Transition 페이지 이동 시 viewport width 안정화 */
+  scrollbar-gutter: stable;
+}
+
+/* ── main 영역 (View Transition swap 후 layout 안정화) ──────────── */
+main {
+  display: block;
+  width: 100%;
+  min-width: 0;
 }
 
 body {
