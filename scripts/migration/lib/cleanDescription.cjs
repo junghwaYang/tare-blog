@@ -1,7 +1,7 @@
 /**
  * cleanDescription.js
  * frontmatter description 정제 공통 헬퍼
- * 적용 순서대로 정제 규칙 11개 + 길이 정상화
+ * 적용 순서대로 정제 규칙 16개 + 길이 정상화
  */
 
 /**
@@ -24,9 +24,21 @@ function stripMarkdown(raw) {
   s = s.replace(/!image(?:\.[a-zA-Z]+)?\([^)]*\)?/g, '');
   // !image.png(https://... 처럼 URL이 잘린 경우 (괄호 없이 URL 시작)
   s = s.replace(/!image(?:\.[a-zA-Z]+)?\(https?:\/\/[^\s]*/gi, '');
+  // 규칙 12: 비표준 이미지 패턴 — !word.ext(anything) 형태 모두 제거
+  s = s.replace(/!\w+\.\w+\([^)]*\)/g, '');
+  // 규칙 13: !word( 형태 일반화 (괄호 있는 것)
+  s = s.replace(/!\w+\([^)]*\)/g, '');
 
   // 4. 링크 마크다운: [text](url) → text
   s = s.replace(/\[([^\]]*)\]\([^)]*\)/g, '$1');
+
+  // 규칙 14: Notion 링크 변형 — text(https://...) 패턴에서 URL 제거, 텍스트만 유지
+  // 예: "FCM(Firebase Cloud Messaging)(https://firebase.google.com/...)" → "FCM(Firebase Cloud Messaging)"
+  // 예: "순수 함수 정리(https://...)" → "순수 함수 정리"
+  // 영문/한글 텍스트 뒤에 (https://...) 가 붙은 경우
+  s = s.replace(/\(https?:\/\/[^\s)]*\)/g, '');
+  // 규칙 15: 남은 standalone raw URL 제거 — https://... 단독 출현
+  s = s.replace(/https?:\/\/\S+/g, '');
 
   // 5. HTML 태그 제거
   s = s.replace(/<br\s*\/?>/gi, ' ');

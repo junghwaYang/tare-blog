@@ -108,12 +108,16 @@ function needsCleaning(desc) {
   if (!desc) return true;
   // 이미지 마크다운
   if (/!\[|!image(?:\.[a-zA-Z]+)?\(/.test(desc)) return true;
+  // 비표준 이미지 패턴: !word.ext(...) 또는 !word(...)
+  if (/!\w+[\.(]/.test(desc)) return true;
   // HTML 태그
   if (/<[a-zA-Z]/.test(desc)) return true;
   // 인라인 코드
   if (/`/.test(desc)) return true;
   // 코드블록
   if (/```/.test(desc)) return true;
+  // raw URL (https:// 직접 포함)
+  if (/https?:\/\//.test(desc)) return true;
   // 너무 짧음
   if (desc.trim().length < 30) return true;
   // 너무 길음 (Zod max 300)

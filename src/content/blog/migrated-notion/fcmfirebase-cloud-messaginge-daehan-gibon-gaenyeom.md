@@ -1,6 +1,6 @@
 ---
 title: "FCM(Firebase Cloud Messaging)에 대한 기본 개념"
-description: "💡 FCM(Firebase Cloud Messaging)(https://firebase.google.com/docs/cloudmessaging?hl=ko&gl=11oacq3upMQ..gaODIzMzc4NzMyLjE3NTAxNDU0NDQ.gaCW55HF8NVTczE3NTAxNDU0NDMkbzEkZzAkdDE3NTAxNDU1NjMkajYwJGwwJGgw) 이"
+description: "FCM(Firebase Cloud Messaging)이란 메세지를 안정적으로 전송할 수 있는 크로스 플랫폼 메시징 솔루션입니다. 알림 메시지 및 데이터 메시지 전송, 다양한 메시지 타겟팅을 지원합니다."
 pubDate: 2025-06-17T07:39:00.000Z
 updatedDate: 2025-06-17T15:44:00.000Z
 tags: []
