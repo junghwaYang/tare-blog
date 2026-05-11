@@ -1,6 +1,6 @@
 ---
 title: "TypeScript"
-description: "📌 타입 스크립트란? TypeScript는 JavaScript의 상위 집합(Superset)으로, <u정적 타입 검사</u(Static Type Checking) 기능을 추가한 프로그래밍 언어입니다. TypeScript는 Microsoft에서 개발했으며, JavaScript 코드를 더 안전하고 유지보수하기 쉽게 만들어줍니다. 학습내용 타입 스크립트 기초 "
+description: "📌 타입 스크립트란? TypeScript는 JavaScript의 상위 집합(Superset)으로, 정적 타입 검사(Static Type Checking) 기능을 추가한 프로그래밍 언어입니다. TypeScript는 Microsoft에서 개발했으며, JavaScript 코드를 더 안전하고 유지보수하기 쉽게 만들어줍니다. 학습내용 타입 스크립트 기초"
 pubDate: 2024-11-09T02:16:00.000Z
 updatedDate: 2025-06-17T02:49:00.000Z
 tags: []

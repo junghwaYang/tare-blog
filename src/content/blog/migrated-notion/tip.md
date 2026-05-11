@@ -1,6 +1,6 @@
 ---
 title: "팁"
-description: "git(실무에서 자주 사용되는 명령어 모음) !image(https://images.unsplash.com/photo1647166545674ce28ce93bdca?ixlib=rb4.0.3&q=85&fm=jpg&crop=entropy&cs=srgb) 1. git clone 설명: 원격 저장소의 코드를 로컬로 복제할 때 사용합니다. 실무에서의 사용: 프로젝트를"
+description: "git(실무에서 자주 사용되는 명령어 모음) 1. git clone 설명: 원격 저장소의 코드를 로컬로 복제할 때 사용합니다. 실무에서의 사용: 프로젝트를"
 pubDate: 2024-10-08T17:57:00.000Z
 updatedDate: 2025-06-10T03:35:00.000Z
 tags: []

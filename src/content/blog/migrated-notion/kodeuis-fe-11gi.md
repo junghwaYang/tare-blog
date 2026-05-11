@@ -1,6 +1,6 @@
 ---
 title: "코드잇 FE 11기"
-description: "위클리 페이퍼 1주차 위클리 페이퍼 !image(https://images.unsplash.com/photo150922862715272ae9ae6848d?ixlib=rb4.0.3&q=85&fm=jpg&crop=entropy&cs=srgb) 👉🏻 CSS의 Cascading에 대해 설명해 주세요. <uCascading 이란?</u 동일한 요소에 여러 스타일"
+description: "위클리 페이퍼 1주차 위클리 페이퍼 👉🏻 CSS의 Cascading에 대해 설명해 주세요. 이란? 동일한 요소에 여러 스타일"
 pubDate: 2025-03-04T08:21:00.000Z
 updatedDate: 2025-06-10T03:35:00.000Z
 tags: []

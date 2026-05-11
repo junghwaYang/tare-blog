@@ -1,6 +1,6 @@
 ---
 title: "c언어 기초"
-description: "강의 내용"
+description: "c언어 기초에 대한 내용을 정리한 글입니다."
 pubDate: 2025-08-13T09:54:00.000Z
 updatedDate: 2025-08-13T09:55:00.000Z
 tags: []

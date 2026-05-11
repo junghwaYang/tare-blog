@@ -1,6 +1,6 @@
 ---
 title: "Prefetch란?"
-description: "Prefetch는 브라우저가 사용자가 특정 리소스를 요청하기 전에 미리 가져오는 기술이다. Next.js에서는 <u페이지 전환 시 사용될 데이터와 리소스를 사전에 로드</u하여, 사용자가 링크를 클릭하면 즉시 해당 페이지를 렌더링할 수 있도록 최적화할 수 있다. Next에서 Prefetch Link Next.js는 기본적으로 next/link 컴포넌트에서 "
+description: "Prefetch는 브라우저가 사용자가 특정 리소스를 요청하기 전에 미리 가져오는 기술이다. Next.js에서는 페이지 전환 시 사용될 데이터와 리소스를 사전에 로드하여, 사용자가 링크를 클릭하면 즉시 해당 페이지를 렌더링할 수 있도록 최적화할 수 있다. Next에서 Prefetch Link Next.js는 기본적으로 next/link 컴포넌트에서"
 pubDate: 2024-11-26T02:56:00.000Z
 updatedDate: 2025-06-17T02:55:00.000Z
 tags: []

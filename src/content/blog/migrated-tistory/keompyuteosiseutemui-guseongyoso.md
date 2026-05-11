@@ -1,6 +1,6 @@
 ---
 title: "컴퓨터시스템의 구성요소"
-description: "1. 시스템 구성의 기본 01      컴퓨터 구성의 분류 일반적으로 컴퓨터의 구성은 하드웨어와 소프트웨어로 구분한다. | 하드웨어 | 소프트웨어 | | --- | --- | | 컴퓨터의 기계적인 장치 | 하드웨어의 동작을 제어하고 지시하는모든 종류의 프로그램 |    하드웨어 !image(https://blog.kakaocdn.net/dna/b7dNIj/btrbpPOwJ1E/AAAAAAAAAAAAAAAAAAAAAAW7qTwub8eA5eC1igUH4NvyyU3JbxPwOVnU8cRAZN6z/img.png?crede"
+description: "시스템 구성의 기본 01 컴퓨터 구성의 분류 일반적으로 컴퓨터의 구성은 하드웨어와 소프트웨어로 구분한다. 하드웨어"
 pubDate: 2021-08-06T08:42:18.000Z
 updatedDate: 2021-08-10T01:01:45.000Z
 tags: []
