@@ -4,7 +4,7 @@ description: "💡 리액트란? 리액트(React)는 사용자 인터페이스(U
 pubDate: 2024-10-08T16:11:00.000Z
 updatedDate: 2025-06-17T02:49:00.000Z
 tags: []
-category: "study"
+category: "react"
 slug: "react"
 draft: false
 originalUrl: "https://www.notion.so/1194ef56099480ce8012fc6e74ae602f"
@@ -3112,7 +3112,7 @@ export default HoverComponent;
 ## 별점을 표기할 Rating 컴포넌트 만들기
 
 
-![%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA_2024-10-08_%E1%84%8B%E1%85%A9%E1%84%92%E1%85%AE_1.29.51.png](/images/migrated-notion/react/_E1_84_89_E1_85_B3_E1_84_8F_E1_85_B3_E1_84_85_E1_85_B5_E1_86.png)
+![%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA_2024-10-08_%E1%84%8B%E1%85%A9%E1%84%92%E1%85%AE_1.29.51.png](/images/migrated-notion/react/screenshot-1.png)
 
 
 우선, 위와 같은 별점 UI를 생성하여, form input에도 해당 컴포넌트를 재사용 할 예정이다.
@@ -6974,7 +6974,7 @@ function Components(){
 
 - [Comment Anchors](https://marketplace.visualstudio.com/items?itemName=ExodiusStudios.comment-anchors)를 사용한다
 
-![%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA_2024-10-09_%E1%84%8B%E1%85%A9%E1%84%8C%E1%85%A5%E1%86%AB_1.28.16.png](/images/migrated-notion/react/_E1_84_89_E1_85_B3_E1_84_8F_E1_85_B3_E1_84_85_E1_85_B5_E1_86.png)
+![%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA_2024-10-09_%E1%84%8B%E1%85%A9%E1%84%8C%E1%85%A5%E1%86%AB_1.28.16.png](/images/migrated-notion/react/screenshot-1.png)
 
 
 ## 태그 네이밍
@@ -9110,7 +9110,7 @@ const handleLoad = useCallback((option) => {
 - **리플로우**: 레이아웃 변경 시 발생하며, 브라우저가 요소의 위치와 크기를 다시 계산합니다.
     - **리페인팅**: 시각적인 속성의 변경(예: 색상 변경) 시 발생하여 화면을 다시 그립니다.
 
-![%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA_2024-10-12_%E1%84%8B%E1%85%A9%E1%84%92%E1%85%AE_8.01.52.png](/images/migrated-notion/react/_E1_84_89_E1_85_B3_E1_84_8F_E1_85_B3_E1_84_85_E1_85_B5_E1_86.png)
+![%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA_2024-10-12_%E1%84%8B%E1%85%A9%E1%84%92%E1%85%AE_8.01.52.png](/images/migrated-notion/react/screenshot-1.png)
 
 
 ## 기술면접

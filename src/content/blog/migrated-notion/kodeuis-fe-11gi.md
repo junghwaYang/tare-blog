@@ -3077,7 +3077,7 @@ OIDC(OpenID Connect)는 OAuth의 확장으로, **인증(Authentication)** 기능
 ## OIDC의 워크플로우
 
 
-![%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA_2025-01-08_%E1%84%8B%E1%85%A9%E1%84%8C%E1%85%A5%E1%86%AB_8.02.47.png](/images/migrated-notion/kodeuis-fe-11gi/_E1_84_89_E1_85_B3_E1_84_8F_E1_85_B3_E1_84_85_E1_85_B5_E1_86.png)
+![%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA_2025-01-08_%E1%84%8B%E1%85%A9%E1%84%8C%E1%85%A5%E1%86%AB_8.02.47.png](/images/migrated-notion/kodeuis-fe-11gi/screenshot-1.png)
 
 1. 사용자가 클라이언트 애플리케이션에서 '구글로 로그인' 버튼을 클릭
 2. 구글(OIDC 프로바이더)이 사용자 인증을 수행하고, ID 토큰을 발급
