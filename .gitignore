@@ -29,5 +29,8 @@ pnpm-debug.log*
 # omc internal plans & metadata
 .omc/
 
+# migration cache
+scripts/migration/.cache/
+
 # environment variables (catch-all)
 .env*
