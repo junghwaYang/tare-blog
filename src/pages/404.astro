@@ -1,37 +1,58 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import PostCard from '../components/PostCard.astro';
+import Search from '../components/Search.astro';
+import { getPosts } from '../utils/posts';
+
+const recentPosts = (await getPosts()).slice(0, 3);
 ---
 
 <BaseLayout title="404 — 페이지를 찾을 수 없습니다" description="요청하신 페이지를 찾을 수 없습니다.">
   <div class="container not-found-container">
-    <div class="not-found-inner">
+    <header class="not-found-header">
       <p class="not-found-code">404</p>
       <h1 class="not-found-title">페이지를 찾을 수 없습니다</h1>
       <p class="not-found-desc">
-        요청하신 페이지가 존재하지 않거나 이동되었습니다.
+        요청하신 페이지가 존재하지 않거나 이동되었습니다.<br />
+        아래에서 글을 검색하거나 최근 글을 살펴보세요.
       </p>
       <nav class="not-found-nav" aria-label="페이지 이동">
         <a href="/" class="btn-link btn-link--primary">홈으로</a>
         <a href="/blog" class="btn-link">모든 글 보기</a>
       </nav>
-    </div>
+    </header>
+
+    <section class="not-found-search" aria-labelledby="not-found-search-heading">
+      <h2 id="not-found-search-heading" class="section-heading">검색</h2>
+      <Search />
+    </section>
+
+    {recentPosts.length > 0 && (
+      <section class="not-found-recent" aria-labelledby="not-found-recent-heading">
+        <h2 id="not-found-recent-heading" class="section-heading">최근 글</h2>
+        <div class="recent-grid">
+          {recentPosts.map((post) => (
+            <PostCard post={post} />
+          ))}
+        </div>
+      </section>
+    )}
   </div>
 </BaseLayout>
 
 <style>
   .not-found-container {
-    padding-block: 6rem;
-    display: flex;
-    justify-content: center;
+    padding-block: 4rem 5rem;
   }
 
-  .not-found-inner {
+  .not-found-header {
     text-align: center;
-    max-width: 480px;
+    max-width: 560px;
+    margin: 0 auto 3.5rem;
   }
 
   .not-found-code {
-    font-size: 6rem;
+    font-size: clamp(4rem, 8vw, 6rem);
     font-weight: 900;
     line-height: 1;
     color: var(--border-strong);
@@ -51,7 +72,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
   .not-found-desc {
     font-size: 1rem;
     color: var(--fg-muted);
-    line-height: 1.6;
+    line-height: 1.7;
     margin-bottom: 2rem;
   }
 
@@ -75,34 +96,55 @@ import BaseLayout from '../layouts/BaseLayout.astro';
       background-color var(--transition-fast),
       border-color var(--transition-fast);
   }
-
   .btn-link:hover {
     background-color: var(--bg-hover);
     border-color: var(--border-strong);
   }
-
   .btn-link:focus-visible {
     outline: 2px solid var(--accent);
     outline-offset: 3px;
   }
-
   .btn-link--primary {
     background-color: var(--accent);
     border-color: var(--accent);
     color: #fff;
   }
-
   .btn-link--primary:hover {
     background-color: var(--accent-hover);
     border-color: var(--accent-hover);
   }
 
+  .not-found-search {
+    max-width: 600px;
+    margin: 0 auto 3.5rem;
+  }
+
+  .not-found-recent {
+    margin-top: 0;
+  }
+
+  .section-heading {
+    font-size: 1rem;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: var(--fg-muted);
+    margin-bottom: 1.25rem;
+    text-align: center;
+  }
+
+  .recent-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 1.25rem;
+  }
+
   @media (max-width: 640px) {
     .not-found-container {
-      padding-block: 4rem;
+      padding-block: 2.5rem 3rem;
     }
-    .not-found-code {
-      font-size: 4rem;
+    .recent-grid {
+      grid-template-columns: 1fr;
     }
   }
 </style>
