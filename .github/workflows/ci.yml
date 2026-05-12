@@ -1,0 +1,45 @@
+name: CI
+
+on:
+  pull_request:
+    branches: [main]
+  push:
+    branches: [main]
+
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  build-and-a11y:
+    name: Build + Pa11y a11y check
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js 22
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build (Astro + Pagefind)
+        run: npm run build
+        env:
+          # CI에서는 절대 URL을 localhost로 고정 → Pa11y가 외부 호출 없이 검사
+          SITE_URL: http://localhost:3000
+
+      - name: Serve dist on :3000
+        run: npx --yes serve dist -p 3000 --no-clipboard &
+
+      - name: Wait for server ready
+        run: npx --yes wait-on http://localhost:3000 -t 30000
+
+      - name: Run Pa11y CI (WCAG 2.1 AA)
+        run: npx --yes pa11y-ci --config .pa11yci.json
