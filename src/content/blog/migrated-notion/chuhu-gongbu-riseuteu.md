@@ -4,7 +4,7 @@ description: "Ping 이라는 명령어랑 traceroute 명령어를 c 로 만들�
 pubDate: 2025-11-21T12:50:00.000Z
 updatedDate: 2025-11-21T12:54:00.000Z
 tags: []
-category: "study"
+category: "security"
 slug: "chuhu-gongbu-riseuteu"
 draft: false
 originalUrl: "https://www.notion.so/2b24ef5609948063a07ecb42eb82a9de"
