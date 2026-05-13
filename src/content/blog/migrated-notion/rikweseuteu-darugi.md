@@ -3,7 +3,7 @@ title: "리퀘스트 다루기"
 description: "들어가며 이번 글에서는 우리가 만든 API의 request에 대한 정보를 가져올때 사용이 되는데, 어떤 것들을 가져오는지 확인해볼것이다. 본문 1. params와 query string 다이나믹 라우트에 params 값 가져오기 javascript // id.js export default function handler(req, res) { res.send"
 pubDate: 2024-12-03T09:05:00.000Z
 updatedDate: 2025-06-17T02:55:00.000Z
-tags: []
+tags: ["react", "리액트"]
 category: "react"
 slug: "rikweseuteu-darugi"
 draft: false

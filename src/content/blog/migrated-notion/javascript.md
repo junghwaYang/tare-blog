@@ -3,7 +3,7 @@ title: "JavaScript"
 description: "학습 내용 자세한 객체와 배열 객체란 💡 객체란 💡 객체는 키값 쌍으로 구성된 데이터 구조로, 여러 값(속성)과 메서드(함수)를 하나의 단위로 묶어 관리할 수 있습니다. 1. 객체(Object)의 기본 개념 객체 생성 JavaScript에서 객체를 생성하는 방법은 여러 가지가 있습니다. 대표적인 방법은 객체 리터럴과 생성자 함수를 사용하는 방법입니다. "
 pubDate: 2024-10-08T16:38:00.000Z
 updatedDate: 2025-06-17T02:49:00.000Z
-tags: []
+tags: ["javascript", "자바스크립트"]
 category: "javascript"
 slug: "javascript"
 draft: false

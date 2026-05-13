@@ -3,7 +3,7 @@ title: "[C언어] switch문"
 description: "여러분, if-else 문으로 여러 조건을 처리해봤죠?근데 조건이 많아질수록 코드가 점점 지저분해진다는 느낌 받으셨을 겁니다.예를 들어 메뉴 선택 코드가 길어지면 if, else if, else if… 줄이 주르륵 늘어나서 보기 불편해져요.이럴 때 switch문이 등장"
 pubDate: 2025-09-01T14:51:39.547Z
 updatedDate: 2026-05-10T01:49:13.149Z
-tags: []
+tags: ["c", "씨언어"]
 category: "c-lang"
 slug: "ceoneo-switchmun"
 draft: false

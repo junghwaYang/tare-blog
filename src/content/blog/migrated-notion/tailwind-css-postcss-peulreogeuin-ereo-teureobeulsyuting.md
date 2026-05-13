@@ -3,7 +3,7 @@ title: "Tailwind CSS PostCSS 플러그인 에러 트러블슈팅"
 description: "문제 상황 React + Vite + Tailwind CSS 프로젝트 설정 중 다음과 같은 에러가 발생: plain text postcss It looks like you're trying to use tailwindcss directly as a PostCSS plugin. The PostCSS plugin has moved to a separate pa"
 pubDate: 2025-06-10T06:40:00.000Z
 updatedDate: 2025-07-30T18:22:00.000Z
-tags: []
+tags: ["troubleshooting", "트러블슈팅"]
 category: "troubleshooting"
 slug: "tailwind-css-postcss-peulreogeuin-ereo-teureobeulsyuting"
 draft: false

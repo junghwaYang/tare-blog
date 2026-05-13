@@ -3,7 +3,7 @@ title: "자바 용어집"
 description: "Java 프로그래밍 주요 용어 정리집 Java를 처음 배우거나 사용할 때 자주 나오는 용어들을 정리했습니다. 초보자 관점에서 기본 개념을 명확히 설명하고, 일상적인 비유를 추가했습니다. 용어는 카테고리별로 그룹화했어요 (기본, OOP, 데이터 구조, 예외/고급 등). 특히 \"노드(Node)\"에 대해 물어보셨는데, Java에서 Node는 주로 데이터 구조(예"
 pubDate: 2025-07-13T05:28:00.000Z
 updatedDate: 2025-07-13T05:29:00.000Z
-tags: []
+tags: ["java", "자바"]
 category: "java"
 slug: "jaba-yongeojip"
 draft: false

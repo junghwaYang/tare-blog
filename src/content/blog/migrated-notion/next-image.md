@@ -3,7 +3,7 @@ title: "Next Image"
 description: "Next Image란? Next에서 제공하는 컴포넌트이다. 이미지를 최적화 하여, 성능을 향상 시키는데 도움을 준다. 해당 Image 컴포넌트를 사용할때는 부모요소에 position: relative; 를 설정해주어야 한다. 다양한 옵션 src 이미지의 경로를 설정하는 옵션이다. public 폴더 내부에서는 /images/demo.jpg와 같이 지정이 가능"
 pubDate: 2024-11-29T04:39:00.000Z
 updatedDate: 2025-06-17T02:55:00.000Z
-tags: []
+tags: ["react", "리액트"]
 category: "react"
 slug: "next-image"
 draft: false

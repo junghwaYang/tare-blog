@@ -3,7 +3,7 @@ title: "커스텀 App과 Document"
 description: "App.js Next에서는 App.js 라는 파일에서 공통으로 사용되는 컴포넌트를 추가 할 수 있다. 리액트로 치면 App.js 컴포넌트라고 할 수 있다. 예제 typescript import Container from '@/components/Container'; import '@/styles/global.css'; export default functi"
 pubDate: 2024-11-22T05:07:00.000Z
 updatedDate: 2025-06-17T02:55:00.000Z
-tags: []
+tags: ["react", "리액트"]
 category: "react"
 slug: "keoseuteom-appgwa-document"
 draft: false

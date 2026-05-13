@@ -3,7 +3,7 @@ title: "토스 on-air 패스트트랙 과제전형 회고"
 description: "서류 전형을 거치지 않고 빠르게 지원해볼 수 있는 패스트 트랙에 지원했다. 과제 테스트는 7월 12일 오후 12시부터 오후 10시까지 진행되었다. 학원 수업이 있음에도 불구하고, 과제 전형에 집중하기 위해서 오후 12시가 되자마자 바로 과제를 다운받아 분석을 시작하였다. 우선 토스에서 사용하는 TDS를 과제전형에 맞게 커스텀마이징한 형태로 이커머스 형식의 "
 pubDate: 2025-07-30T18:26:00.000Z
 updatedDate: 2025-07-30T19:00:00.000Z
-tags: []
+tags: ["retrospective", "회고"]
 category: "retrospective"
 slug: "toseu-on-air-paeseuteuteuraek-gwajejeonhyeong-hoego"
 draft: false

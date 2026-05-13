@@ -3,7 +3,7 @@ title: "[C언어] C언어로 무엇을 할 수 있을까?"
 description: "자, 우리가 C언어 환경 세팅을 다 해놨잖아요? 이제 ‘이걸 대체 어디다 써먹는 거지?’ 싶을 거예요. C언어는 한마디로 '근본'입니다. 모든 언어의 '할아버지' 같은 존재랄까요. 그래서 아직도 엄청나게 많이 쓰이고 있어요.보통은 이런 데서 C언어가 힘을 발휘합니다."
 pubDate: 2025-09-01T14:07:09.082Z
 updatedDate: 2026-05-10T18:49:43.320Z
-tags: ["c"]
+tags: ["c", "씨언어"]
 category: "c-lang"
 slug: "ceoneo-ceoneoro-mueoseul-hal-su-isseulkka"
 draft: false

@@ -3,7 +3,7 @@ title: "유닉스 커맨드란?"
 description: "유닉스(Unix)는 강력하고 유연한 운영 체제(OS)로, 커맨드라인 인터페이스(CLI)를 통해 다양한 작업을 수행할 수 있습니다. 유닉스 커맨드는 텍스트 기반의 명령어로, 사용자가 운영 체제와 상호작용하는 데 사용됩니다. 유닉스 커맨드는 리눅스(Linux) 및 맥OS(macOS)와 같은 유닉스 계열 운영 체제에서도 유사하게 동작합니다. CLI(Command"
 pubDate: 2024-09-03T00:31:00.000Z
 updatedDate: 2025-06-17T02:46:00.000Z
-tags: []
+tags: ["tooling", "도구"]
 category: "tooling"
 slug: "yunikseu-keomaendeuran"
 draft: false

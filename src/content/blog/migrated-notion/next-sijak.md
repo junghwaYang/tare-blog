@@ -3,7 +3,7 @@ title: "Next 시작"
 description: "🤔 Next.js 란? React를 기반으로 한 풀스택 웹 프레임워크입니다. React의 단점을 보완하고, 서버사이드 렌더링(SSR), 정적 사이트 생성(SSG) 같은 기능을 쉽게 구현할 수 있도록 설계된 프레임워크입니다. Vercel이 개발 및 유지 보수하고 있으며, SEO 최적화, 퍼포먼스 개선, 유연한 라우팅 시스템 등 현대적인 웹 개발에 필요한 기"
 pubDate: 2024-11-19T09:53:00.000Z
 updatedDate: 2025-06-17T02:57:00.000Z
-tags: []
+tags: ["react", "리액트"]
 category: "react"
 slug: "next-sijak"
 draft: false

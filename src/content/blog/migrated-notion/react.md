@@ -3,7 +3,7 @@ title: "React"
 description: "💡 리액트란? 리액트(React)는 사용자 인터페이스(UI)를 구축하기 위한 JavaScript 라이브러리로, 주로 웹 애플리케이션을 개발하는 데 사용됩니다. 리액트는 Facebook에서 개발하였으며, 현재는 오픈 소스로 커뮤니티에 의해 유지 관리되고 있습니다. 학습 내용 리액트 기초 react 설치 및 실행 명령어 react 설치 및 실행 명령어 리액트"
 pubDate: 2024-10-08T16:11:00.000Z
 updatedDate: 2025-06-17T02:49:00.000Z
-tags: []
+tags: ["react", "리액트"]
 category: "react"
 slug: "react"
 draft: false

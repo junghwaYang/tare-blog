@@ -2,7 +2,7 @@
 title: "Astro로 기술 블로그 시작하기"
 description: "Astro 6.x를 사용해 정적 블로그를 구축하는 방법을 정리합니다. Content Collections, Zod 스키마, MDX 통합까지 다룹니다."
 pubDate: 2026-05-01
-tags: ["astro", "blog", "ssg"]
+tags: ["astro", "blog", "frontend", "ssg", "블로그", "아스트로", "정적사이트", "프론트엔드"]
 category: "frontend"
 slug: "astro-blog-getting-started"
 draft: false

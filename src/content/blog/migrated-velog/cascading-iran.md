@@ -3,7 +3,7 @@ title: "Cascading 이란?"
 description: "동일한 요소에 여러 스타일을 적용 시킬 때,어떤 스타일이 우선적으로 적용이 되는지 결정하는 방식을 말한다.위 css를 작성 했을때, css 코드의 동작은 ‘위에서부터 아래로’ 동작 하기 때문에결과적으로 background-color: red; 가 적용이 된다.일부 CS"
 pubDate: 2024-08-29T12:02:29.711Z
 updatedDate: 2026-04-15T19:50:26.836Z
-tags: ["11"]
+tags: ["11", "frontend", "프론트엔드"]
 category: "frontend"
 slug: "cascading-iran"
 draft: false

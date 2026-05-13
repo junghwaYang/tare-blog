@@ -3,7 +3,7 @@ title: "클라이언트에서 데이터 주고 받기"
 description: "들어가며 기본적으로 React에서는 상태 변화가 감지되면 렌더링을 시행한다. 그렇기에 state로 상태 변화를 일으키게 되는데, SSR 페이지에서 이벤트 핸들러를 통해 입력 폼의 상태를 변화시켜서 렌더링하는 방식에 대해서 서술 할 예정이다. 본문 javascript export async function getServerSideProps(context) {"
 pubDate: 2024-11-29T15:30:00.000Z
 updatedDate: 2025-06-17T02:55:00.000Z
-tags: []
+tags: ["react", "리액트"]
 category: "react"
 slug: "keulraieonteueseo-deiteo-jugo-batgi"
 draft: false

@@ -3,7 +3,7 @@ title: "[C언어] 조건문 (if문) + 비교/논리 연산"
 description: "여러분, 이제 단순히 계산만 하는 건 재미없잖아요.프로그래밍이 진짜 재미있어지는 지점은, 상황에 따라 다른 행동을 할 때입니다.바로 조건문이 그걸 해줍니다.“돈이 0보다 크면 치킨 시키고, 아니면 라면 먹는다.”이런 상황을 코드로 표현하는 게 조건문이에요.조건식이 참("
 pubDate: 2025-09-01T14:41:41.384Z
 updatedDate: 2026-04-21T01:01:20.435Z
-tags: ["c"]
+tags: ["c", "씨언어"]
 category: "c-lang"
 slug: "ceoneo-jogeonmun-ifmun-bigyononri-yeonsan"
 draft: false

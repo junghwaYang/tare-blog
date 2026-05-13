@@ -3,7 +3,7 @@ title: "useRouter 사용하기"
 description: "useRouter는 next에서 경로의 pram과 query를 가져오는데에 사용된다. pram 가져오기 javascript // pages/products/id.jsx import { useRouter } from 'next/router'; export default function Product(){ const router = useRouter(); co"
 pubDate: 2024-11-19T10:03:00.000Z
 updatedDate: 2025-06-17T02:55:00.000Z
-tags: []
+tags: ["react", "리액트"]
 category: "react"
 slug: "userouter-sayonghagi"
 draft: false

@@ -3,7 +3,7 @@ title: "리다이렉트 하기"
 description: "만약 웹 사이트를 운영하다가 특정 path의 경로를 바꾸어줘야할때는 next 파일 자체에서는 pages에 있는 폴더 네임만 변경해주면 됩니다. 하지만 사용자의 입장에서 이전 url을 즐겨찾기 해놓고 이전 버전의 url로 접속했을때는 404 에러가 발생하게 되는데 이를 방지하기위해서 next 서버에서 리다이렉트 처리를 해주어야한다. next 서버 설정은 ne"
 pubDate: 2024-11-21T05:25:00.000Z
 updatedDate: 2025-06-17T02:55:00.000Z
-tags: []
+tags: ["react", "리액트"]
 category: "react"
 slug: "ridairekteu-hagi"
 draft: false

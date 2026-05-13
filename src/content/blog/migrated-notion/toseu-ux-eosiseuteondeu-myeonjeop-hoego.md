@@ -3,7 +3,7 @@ title: "토스 UX 어시스턴드 면접 회고"
 description: "나의 1지망 토스에 서류 전형 합격 이라는 큰 행운이 찾아왔다. 아직 결과를 받기 전이지만 떨어진 것 같다. 이유는 라이브 코딩 테스트…… 일생일대 개발자로 살겠노라 다짐한 이후 난생 처음 겪는 라이브 코딩 테스트 였다. 문제 해결 능력을 본거라 코드를 완성하지 않아도 어떤식으로 풀어야 할지 그려진다면 크게 문제 될 것이 없었는데 나는 코드를 완성하지도 못"
 pubDate: 2025-04-10T09:30:00.000Z
 updatedDate: 2025-06-10T03:35:00.000Z
-tags: []
+tags: ["retrospective", "회고"]
 category: "retrospective"
 slug: "toseu-ux-eosiseuteondeu-myeonjeop-hoego"
 draft: false

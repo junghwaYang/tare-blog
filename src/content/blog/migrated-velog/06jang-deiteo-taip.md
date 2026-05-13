@@ -3,7 +3,7 @@ title: "06장. 데이터 타입"
 description: "숫자타입의 경우 정ㅇ수만을 위한 타입이 없고 모든 수를 실수로 처리한다.문자열은 작은따옴표, 큰따옴표 또는 백틱으로 텍스트로 감싸서 표현한다.가장 일반적인 표현법은 작은 따옴표를 사용한다.백틱을 이용한 템플릿 리터럴도 있다.불리언 타입의 값은 논리적 참, 거짓을 나타내"
 pubDate: 2024-01-05T11:07:18.000Z
 updatedDate: 2026-04-12T13:21:12.961Z
-tags: []
+tags: ["database", "데이터베이스"]
 category: "database"
 slug: "06jang-deiteo-taip"
 draft: false

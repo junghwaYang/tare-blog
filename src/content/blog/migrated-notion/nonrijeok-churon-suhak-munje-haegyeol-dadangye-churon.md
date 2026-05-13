@@ -3,7 +3,7 @@ title: "논리적 추론, 수학 문제 해결, 다단계 추론, GPQA·MATH 벤
 description: "최신(2025년) 기준으로 논리적 추론, 수학 문제 해결, 다단계 추론, GPQA·MATH 벤치마크 관점에서 ChatGPT, Gemini, Claude, Perplexity, Grok, DeepSeek 주요 AI의 성능/특징을 비교하면 다음과 같습니다. | 모델 | 논리적·다단계 추론 성능 | 수학/GPQA/MATH 벤치마크 | 특징/차별점 | | | | "
 pubDate: 2025-07-31T11:57:00.000Z
 updatedDate: 2025-07-31T11:58:00.000Z
-tags: []
+tags: ["retrospective", "회고"]
 category: "retrospective"
 slug: "nonrijeok-churon-suhak-munje-haegyeol-dadangye-churon"
 draft: false

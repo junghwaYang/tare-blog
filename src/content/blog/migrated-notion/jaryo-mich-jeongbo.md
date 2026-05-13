@@ -3,7 +3,7 @@ title: "자료 및 정보"
 description: "순수 함수에 대한 정의 순수 함수에 대한 정의 간단 요약 1. 항상 동일한 입력에 대해 동일한 출력을 반환한다. 2. 외부 상태를 변경하지 않으며, 외부 상태에 의존하지 않는다. 👉🏻 순수 함수 정리 DOM 조작 함수는 왜 순수 함수가 될 수 없는가? DOM 조작 함수는 HTML 요소를"
 pubDate: 2024-11-12T10:29:00.000Z
 updatedDate: 2025-06-10T03:35:00.000Z
-tags: []
+tags: ["retrospective", "회고"]
 category: "retrospective"
 slug: "jaryo-mich-jeongbo"
 draft: false

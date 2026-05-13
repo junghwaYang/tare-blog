@@ -3,7 +3,7 @@ title: "MongoDB"
 description: "데이터베이스 데이터를 따로 저장하고 관리하는 프로그램 데이터 베이스에는 SQL, NoSQL 등 여러 종류가 있는데 MongoDB는 NoSQL에 속한다. MongoDB 몽고DB에 저장되는 데이터는 도큐먼트(Document)라고 불린다. 도큐먼트는 자바스크립트 객체 같은거라고 생각해도 될 것 같다. 예를 들어 쇼핑몰을 기준으로 도큐먼트를 생성한다면, 상품 정보"
 pubDate: 2024-12-03T09:55:00.000Z
 updatedDate: 2025-06-17T02:49:00.000Z
-tags: []
+tags: ["database", "데이터베이스"]
 category: "database"
 slug: "mongodb"
 draft: false

@@ -2,7 +2,7 @@
 title: "컴퓨터 역사와 분류"
 description: "1. 컴퓨터 역사 01      계산기 형태   고대의 계산기 - 기원 후 1세기경 휴대용 계산기 - 기원 후 3세기경 : 주판   중세의 계산기  01   네피어의 골패 - 1617년에 제작, 제일 오래된 승제산(곱,나눗셈) 용구 - 나무쪽에 수표를 새겨 다른 계산에도 이용할 수 있도록 함. 이 나무표이 컴퓨터가 보급되기 이전까지 흔히 볼 수 있었던 공업용 계산자(slide ruler)의 표시가 되었음  02   파스칼 : 파스칼린(pascalin) - 톱니바퀴를 이용하여 덧셈을 하도록 만든것 - 초기에는 덧셈,"
 pubDate: 2021-08-10T01:38:23.000Z
-tags: []
+tags: ["security", "보안"]
 category: "security"
 slug: "keompyuteo-yeoksawa-bunryu"
 draft: false

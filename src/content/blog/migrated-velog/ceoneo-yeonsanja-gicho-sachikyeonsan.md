@@ -3,7 +3,7 @@ title: "[C언어] 연산자 기초 - 사칙연산"
 description: "여러분, 지난 시간에 변수가 뭐다?“데이터 담는 상자”라고 했었죠.이제 그 상자 안의 값들을 꺼내서 더하고 빼고 곱하고 나눠볼 차례입니다.\\+ : 더하기\\- : 빼기\\* : 곱하기% : 나누기※ int끼리 나누면 소수점은 싹 잘려서 정수만 남습니다.몫 말고 나머지가 필"
 pubDate: 2025-09-01T14:14:29.820Z
 updatedDate: 2026-04-15T21:30:39.695Z
-tags: ["c"]
+tags: ["c", "씨언어"]
 category: "c-lang"
 slug: "ceoneo-yeonsanja-gicho-sachikyeonsan"
 draft: false

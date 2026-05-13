@@ -3,7 +3,7 @@ title: "컴퓨터시스템의 구성요소"
 description: "시스템 구성의 기본 01 컴퓨터 구성의 분류 일반적으로 컴퓨터의 구성은 하드웨어와 소프트웨어로 구분한다. 하드웨어"
 pubDate: 2021-08-06T08:42:18.000Z
 updatedDate: 2021-08-10T01:01:45.000Z
-tags: []
+tags: ["security", "보안"]
 category: "security"
 slug: "keompyuteosiseutemui-guseongyoso"
 draft: false

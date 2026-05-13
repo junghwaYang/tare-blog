@@ -3,7 +3,7 @@ title: "Next에서 지원하는 구글폰트 사용"
 description: "NextJS에서는 구글 폰트를 위한 기능을 제공한다. 일반적인 cdn 방식으로 가져오는거보다 훨신 더 최적화 된 방법으로 사용할 수 있다. 해당 기능은 13버전 이후로만 사용이 가능하다. 예를 들어 noto sans 폰트를 사용한다고 가정해보자. 사용방법 typescript import { NotoSansKR } from 'next/f"
 pubDate: 2024-11-29T09:27:00.000Z
 updatedDate: 2025-06-17T02:55:00.000Z
-tags: []
+tags: ["react", "리액트"]
 category: "react"
 slug: "nexteseo-jiwonhaneun-gugeulponteu-sayong"
 draft: false

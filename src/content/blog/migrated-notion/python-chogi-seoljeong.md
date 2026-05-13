@@ -3,7 +3,7 @@ title: "python 초기 설정"
 description: "강의에서 사용하는 인텔릭제이 설정 아래 리스트 체크 해제 Code Vision 매개변수 이름 python (스크린샷은 기존 설정)"
 pubDate: 2025-06-17T11:17:00.000Z
 updatedDate: 2025-06-17T14:03:00.000Z
-tags: []
+tags: ["python", "파이썬"]
 category: "python"
 slug: "python-chogi-seoljeong"
 draft: false

@@ -2,7 +2,7 @@
 title: "차세대 에이전틱 개발 환경(AI IDE)의 아키텍처 및 워크플로우 비교 분석"
 description: ": Cursor, Claude Code, Antigravity를 중심으로 --- 초록 (Abstract) 본 연구는 2025년 하반기부터 2026년 초까지 급격히 발전한 인공지능 기반 통합 개발 환경(IDE)의 세 가지 주요 패러다임을 분석한다. 코드 자동 완성을 넘어 자율적 문제 해결을 지향하는 Cursor, Claude Code, 그리고 Google Antigravity 엔진의 구조적 차이를 규명하고, 개발자가 직면하는 디자인 이질감 및 백엔드 인프라 설정의 자동화 방안을 고찰한다. --- 1. 서론 (Intr"
 pubDate: 2026-01-05T16:29:54.000Z
-tags: ["agent", "ai", "antigravity", "claudecode", "cursor"]
+tags: ["agent", "ai", "antigravity", "claudecode", "cursor", "web-hacking", "안티그래비티", "에이전트", "웹해킹", "인공지능", "커서", "클로드코드"]
 category: "web-hacking"
 slug: "chasedae-eijeontik-gaebal-hwangyeongai-ideui-akitekcheo"
 draft: false

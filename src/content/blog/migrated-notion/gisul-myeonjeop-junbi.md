@@ -3,7 +3,7 @@ title: "기술 면접 준비"
 description: "예상 질문 리스트업 퍼블리셔에서 프론트엔드로 전향하신 이유가 궁금해요. 단순히 정적인 UI를 넘어서, 데이터를 다루며 사용자 경험을 주도적으로 만들고 싶어서 프론트엔드로 전향하게 됐습니다. 1. 브라우저의 렌더링 과정은 어떻게 되나요? 브라우저는 HTML과 CSS를 파싱하여 DOM과 CSSOM을 생성하고, 이를 결합해 렌더 트리를 만든 후, 레이아웃과 페인"
 pubDate: 2025-03-29T11:02:00.000Z
 updatedDate: 2025-06-10T03:35:00.000Z
-tags: []
+tags: ["retrospective", "회고"]
 category: "retrospective"
 slug: "gisul-myeonjeop-junbi"
 draft: false

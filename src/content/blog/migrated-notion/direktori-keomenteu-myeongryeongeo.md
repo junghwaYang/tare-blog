@@ -3,7 +3,7 @@ title: "디렉토리 커멘트 명령어"
 description: "커맨드에는 옵션과 아규먼트를 입력 할 수 있다. 옵션은 커맨드를 정확히 어떻게 실행할 것인지를 정해 주는 것. 아규먼트는 커맨드를 어느 대상에 대해 실행할 것인지를 정하는 것 man 메뉴얼 출력 커맨드 경로 이동 pwd (print working directory) shell pwd 현재 디렉토리 (working directory)의 경로"
 pubDate: 2025-06-17T02:42:00.000Z
 updatedDate: 2025-06-17T02:46:00.000Z
-tags: []
+tags: ["tooling", "도구"]
 category: "tooling"
 slug: "direktori-keomenteu-myeongryeongeo"
 draft: false

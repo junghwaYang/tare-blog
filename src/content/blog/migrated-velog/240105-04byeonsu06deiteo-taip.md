@@ -3,7 +3,7 @@ title: "240105-(04.변수~06.데이터 타입)"
 description: "어떠한 값을 담기위한 데이터 공간 그 자체어떤 값을 식별하기위한 이름var, let, const선언할당var의 경우는 할당을 별도로 하지않아도 undefined이란 값이 담기며,변수 호이스팅에 의해 순차적으로 실행되는 런타임 이전에 실행되기 때문이다.런타임 이전에 실행"
 pubDate: 2024-01-05T11:20:06.834Z
 updatedDate: 2026-04-16T06:30:27.231Z
-tags: []
+tags: ["database", "데이터베이스"]
 category: "database"
 slug: "240105-04byeonsu06deiteo-taip"
 draft: false

@@ -3,7 +3,7 @@ title: "API 라우트 만들기"
 description: "들어가며 Next에서는 간단하게 페이지 라우터를 이용하여 서버 엔드포인트를 만들 수 있다. 본문 javascript pages/ api/ shortlinks/ id.js index.js javascript // index.js export default function handler(req, res) { res.send('안녕 API!'); } javasc"
 pubDate: 2024-11-29T18:41:00.000Z
 updatedDate: 2025-06-17T02:55:00.000Z
-tags: []
+tags: ["react", "리액트"]
 category: "react"
 slug: "api-rauteu-mandeulgi"
 draft: false

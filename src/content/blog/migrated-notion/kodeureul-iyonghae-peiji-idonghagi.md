@@ -3,7 +3,7 @@ title: "코드를 이용해 페이지 이동하기"
 description: "우선 next.js에서는 page폴더를 기준으로 path 경로를 설정하기때문에 input에 입력한 값을 전달해주는 SearchForm이라는 컴포넌트를 생성해야한다. 프로젝트 경로에 폴더를 components 이름으로 생성해서, SearchForm 컴포넌트를 만들어준다. typescript export default function SearchForm() {"
 pubDate: 2024-11-20T07:29:00.000Z
 updatedDate: 2025-06-17T02:55:00.000Z
-tags: []
+tags: ["react", "리액트"]
 category: "react"
 slug: "kodeureul-iyonghae-peiji-idonghagi"
 draft: false

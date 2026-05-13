@@ -3,7 +3,7 @@ title: "Gemini Cli vs Claude code 비교 분석"
 description: "Gemini CLI와 Claude Code는 모두 AI 기반 코딩 도구이지만, 개발자 관점과 사용 환경에서 차이가 뚜렷합니다. 주요 비교 포인트를 정리하면 다음과 같습니다. | 항목 | Gemini CLI | Claude Code | 비고 | | | | | | | 코드 생성 속도 | 빠름 (8.5/10) | 다소 느림 (7.2/10) | 빠른 프로토타입 제"
 pubDate: 2025-07-31T12:07:00.000Z
 updatedDate: 2025-07-31T12:07:00.000Z
-tags: []
+tags: ["retrospective", "회고"]
 category: "retrospective"
 slug: "gemini-cli-vs-claude-code-bigyo-bunseok"
 draft: false

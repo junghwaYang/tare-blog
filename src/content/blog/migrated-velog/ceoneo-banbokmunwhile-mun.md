@@ -3,7 +3,7 @@ title: "[C언어] 반복문(while 문)"
 description: "여러분, 이제 프로그램이 “조건에 따라서 여러 번 같은 동작”을 하게 만들 차례입니다.예를 들어 “치킨을 배달 올 때까지 계속 기다린다” 같은 상황이 있겠죠.한 번만 기다리는 게 아니라, 조건이 만족될 때까지 계속 반복하는 거예요.이럴 때 쓰는 게 바로 while문입니"
 pubDate: 2025-09-01T15:15:55.067Z
 updatedDate: 2026-04-12T13:21:15.309Z
-tags: []
+tags: ["c", "씨언어"]
 category: "c-lang"
 slug: "ceoneo-banbokmunwhile-mun"
 draft: false

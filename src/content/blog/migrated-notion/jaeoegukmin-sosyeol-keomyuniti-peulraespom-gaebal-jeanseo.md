@@ -3,7 +3,7 @@ title: "재외국민 소셜 커뮤니티 플랫폼 개발 제안서"
 description: "프로젝트 분석 내용 프로젝트 내용 이해 정리 핵심 요구사항 재외국민 대상 위치 기반 소셜 네트워크 플랫폼 5개 카테고리 필수 선택 포스팅 시스템 Facebook 스타일 자유 포스팅 + 카테고리 분류 GPS 기반 현재 위치 중심 검색 (반경 설정) 다국어 지원 (한국어 기본 + 추가 언어들) 재외국민 특화 프로필 (국적, 거주국, 도시, 언어) 기술적 접근 "
 pubDate: 2025-06-11T05:43:00.000Z
 updatedDate: 2025-06-11T06:20:00.000Z
-tags: []
+tags: ["projects", "프로젝트"]
 category: "projects"
 slug: "jaeoegukmin-sosyeol-keomyuniti-peulraespom-gaebal-jeanseo"
 draft: false

@@ -3,7 +3,7 @@ title: "정적 페이지 생성하기"
 description: "Next는 기본적으로 정적 페이지를 생성해준다. 빌드할때 딱 한번만 렌더링 된다 getStaticProps 함수 내부에서는 리액트 hooks를 사용할 수 없다. 단어가 정적페이지라고해서 고정적인 페이지를 보여주는 것이 아닌 빌드 시점에 미리 HTML을 만들어 둔다는 의미로써 고정적인 페이지 라는 의미와 헷갈리지 말자. 데이터 불러와 정적 페이지 생성하기 t"
 pubDate: 2024-11-29T10:14:00.000Z
 updatedDate: 2025-06-17T02:55:00.000Z
-tags: []
+tags: ["react", "리액트"]
 category: "react"
 slug: "jeongjeok-peiji-saengseonghagi"
 draft: false

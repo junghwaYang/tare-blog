@@ -2,7 +2,7 @@
 title: "TypeScript strict 모드 완전 정복"
 description: "TypeScript strict 모드 활성화 시 마주치는 에러 유형과 해결 패턴을 정리합니다. 실무 코드베이스 마이그레이션 경험 기반입니다."
 pubDate: 2026-05-03
-tags: ["typescript", "strict", "type-safety"]
+tags: ["frontend", "strict", "type-safety", "typescript", "엄격모드", "타입스크립트", "타입안전성", "프론트엔드"]
 category: "frontend"
 slug: "typescript-strict-mode"
 draft: false

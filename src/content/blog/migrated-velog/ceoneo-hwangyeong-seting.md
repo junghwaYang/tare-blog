@@ -3,7 +3,7 @@ title: "[C언어] 환경 세팅"
 description: "개발 시작 전에, 일단 준비물부터 챙기시죠자, 여러분. 개발을 시작하려면 일단 기본 세팅부터 해둬야죠? 밥 먹기 전에 숟가락, 젓가락 챙기는 것처럼 말이에요. 개발할 때도 필요한 도구들이 있습니다.뭘 세팅할 거냐면... 일단 컴퓨터는 0과 1밖에 모르는 바보라서 C언어"
 pubDate: 2025-09-01T14:06:02.246Z
 updatedDate: 2026-05-02T02:35:42.691Z
-tags: ["c"]
+tags: ["c", "씨언어"]
 category: "c-lang"
 slug: "ceoneo-hwangyeong-seting"
 draft: false

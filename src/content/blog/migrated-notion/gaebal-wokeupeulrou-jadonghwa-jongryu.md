@@ -3,7 +3,7 @@ title: "개발 워크플로우 자동화 종류"
 description: "개발 환경에서 워크플로우 자동화는 코드 품질, 배포, 버전 관리, 테스트, 커밋 규칙 등 여러 분야에서 다양한 도구와 방법으로 이뤄집니다. 1. 커밋 컨벤션 및 코드 스타일 자동화 commitlint(@commitlint/cli, @commitlint/configconventional) 커밋 메시지 포맷 검증을 자동화해 일관된 커밋 컨벤션 유지 commit"
 pubDate: 2025-07-31T12:13:00.000Z
 updatedDate: 2025-07-31T12:26:00.000Z
-tags: []
+tags: ["retrospective", "회고"]
 category: "retrospective"
 slug: "gaebal-wokeupeulrou-jadonghwa-jongryu"
 draft: false

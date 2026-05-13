@@ -3,7 +3,7 @@ title: "주니어 프론트 스터디"
 description: "⭐️ 스터디 주제 3개의 프로젝트 & 코드리뷰 + 나만의 UI 라이브러리 만들기 👀 참여 동기 부트캠프 수료가 끝난 시점 아직 실력이 부족하다고 느끼던 와중 스터디를 찾아보다가, 마침 관심있어하는 디자인 시스템을 주제로 한 Next 스터디가 있길래 참여하게 됐어요! 🎯 스터디 방향성 동일한 프로젝트를 3개 정도 같이 구현해요. frontendmentor"
 pubDate: 2025-02-26T16:49:00.000Z
 updatedDate: 2025-03-15T17:59:00.000Z
-tags: []
+tags: ["react", "리액트"]
 category: "react"
 slug: "junieo-peuronteu-seuteodi"
 draft: false

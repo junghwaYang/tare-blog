@@ -3,7 +3,7 @@ title: "git 명령어 모음"
 description: "git reset 파일 이름 : staging area에 올렸던 파일 다시 내리기 git commit m \"커밋 메시지\" : 현재 staging area에 있는 것들 커밋으로 남기기 왜 커밋을 했는지 어떤 문제가 있었고 적용한 해결책이 어떤 효과를 가지는지 git help 커맨드 이름 : 사용법이 궁금한 Git 커맨드의 공식 메뉴얼 내용 출력 git pus"
 pubDate: 2024-09-02T07:56:00.000Z
 updatedDate: 2025-06-17T02:46:00.000Z
-tags: []
+tags: ["git", "깃"]
 category: "git"
 slug: "git-myeongryeongeo-moeum"
 draft: false

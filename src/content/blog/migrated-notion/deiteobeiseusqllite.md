@@ -3,7 +3,7 @@ title: "데이터베이스(SQLlite)"
 description: "데이터베이스 기초 학습노트 1. 데이터베이스란? 정의 데이터베이스(DB): 데이터를 체계적으로 저장하고 관리하는 소프트웨어 저장소 DBMS(Database Management System): 데이터베이스를 관리할 수 있는 시스템 예시: MySQL, PostgreSQL, Oracle, SQLite 등 기본 구조 서버 설치 → 데이터베이스 설치 → 클라이언트와"
 pubDate: 2025-06-24T10:56:00.000Z
 updatedDate: 2025-07-31T12:54:00.000Z
-tags: []
+tags: ["database", "데이터베이스"]
 category: "database"
 slug: "deiteobeiseusqllite"
 draft: false

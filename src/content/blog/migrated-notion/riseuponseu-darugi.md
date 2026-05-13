@@ -3,7 +3,7 @@ title: "리스폰스 다루기"
 description: "들어가며 이번 챕터는 response를 다루는 방법에 대해서 서술할 예정이다. res를 다룰때는 req와 다른 방식으로 작성을 해주어야하는데 이때 메서드 체이닝을 이용해서 작성해주어야한다. 본문 메서드 체이닝이란? 메서드 체이닝은 객체에서 연속적으로 메서드를 호출할 수 있도록 설계된 프로그래밍 기법입니다. 각 메서드가 호출된 후 객체 자신(this)을 반환"
 pubDate: 2024-12-03T09:31:00.000Z
 updatedDate: 2025-06-17T02:55:00.000Z
-tags: []
+tags: ["react", "리액트"]
 category: "react"
 slug: "riseuponseu-darugi"
 draft: false

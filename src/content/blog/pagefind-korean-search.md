@@ -3,7 +3,7 @@ title: "Pagefind로 한국어 블로그 검색 구현하기"
 description: "정적 사이트에 Pagefind를 통합해 한국어 전문 검색을 구현하는 방법을 정리합니다. force_language 설정과 인덱싱 범위 최적화까지 다룹니다."
 pubDate: 2026-04-20
 updatedDate: 2026-05-05
-tags: ["pagefind", "search", "korean"]
+tags: ["korean", "pagefind", "search", "tooling", "검색", "도구", "페이지파인드", "한국어"]
 category: "tooling"
 slug: "pagefind-korean-search"
 draft: false

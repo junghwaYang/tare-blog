@@ -3,7 +3,7 @@ title: "gpt-3.5를 이용한 ai 챗봇 개발 기록"
 description: "프론트엔드:Next.js: 리액트 기반의 프론트엔드 프레임워크React: 사용자 인터페이스 구축을 위한 라이브러리React DOM: React 애플리케이션을 웹 페이지에 렌더링하기 위한 라이브러리Axios: HTTP 요청을 위한 라이브러리Tailwind CSS: CSS"
 pubDate: 2024-01-19T19:53:44.212Z
 updatedDate: 2026-05-06T22:29:22.800Z
-tags: []
+tags: ["ai", "인공지능"]
 category: "ai"
 slug: "gpt-35reul-iyonghan-ai-chaesbos-gaebal-girok"
 draft: false

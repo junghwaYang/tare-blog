@@ -3,7 +3,7 @@ title: "[C언어] 변수와 타입"
 description: "자, 여러분. 드디어 C언어 문법의 첫걸음을 떼는 순간이 왔습니다.프로그래밍에서 제일 많이 하는 게 뭐냐? 바로 저장이에요.생각해보세요. 우리도 평소에 뭔가 담을 때 상자 쓰잖아요.반지는 반지 케이스에, 신발은 신발장에...그래서 프로그래밍에서도 똑같습니다.데이터 ="
 pubDate: 2025-09-01T14:10:45.507Z
 updatedDate: 2026-04-16T09:21:41.443Z
-tags: ["c"]
+tags: ["c", "씨언어"]
 category: "c-lang"
 slug: "ceoneo-byeonsuwa-taip"
 draft: false

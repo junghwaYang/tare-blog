@@ -3,7 +3,7 @@ title: "Git 기초"
 description: "repository와 commit 1. 레포지토리(repository) : 저장소 프로젝트의 변경사항들이 저장되는 곳 2. 커밋(commit) : 하나의 버전으로 남기는 동작 & 결과물 git commit m 내용 : 현재 staging area에 있는 것을 commit으로 남기는 명령어 git 세팅 명령어 git init : 현재 디렉토리를 Git이 관리"
 pubDate: 2025-06-17T02:40:00.000Z
 updatedDate: 2025-06-17T02:45:00.000Z
-tags: []
+tags: ["git", "깃"]
 category: "git"
 slug: "git-gicho"
 draft: false

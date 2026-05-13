@@ -3,7 +3,7 @@ title: "mac os M1 환경에서 anaconda 세팅"
 description: "해당 본문은 mac M1 환경에서 anaconda 설치 방법을 다루고 있습니다. 📚 아나콘다(anaconda)란? 파이썬을 사용할 때 필요한 여러가지 패키지 관리 및 가상환경을 편리하게 설정할 수 있는 배포판이다. 가상환경: 소프트웨어 개발 시 여러 패키지와 라이브러리를 설치하여 사용하는데, 버전이 맞지않는 경우 충돌이 일어날 수 있다. 따라서 패키지와 "
 pubDate: 2025-06-17T13:38:00.000Z
 updatedDate: 2025-06-17T14:01:00.000Z
-tags: []
+tags: ["python", "파이썬"]
 category: "python"
 slug: "mac-os-m1-hwangyeongeseo-anaconda-seting"
 draft: false

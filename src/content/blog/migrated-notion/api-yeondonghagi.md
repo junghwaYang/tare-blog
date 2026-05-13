@@ -3,7 +3,7 @@ title: "api 연동하기"
 description: "next의 api 연동은 react와 크게 차이가 없다. 하지만 여기서 axios를 이용해 데이터를 불러오는 방법을 사용해보겠다. 우선, lib/axios.js 파일을 만들어서 아래와 같이 작성한다. javascript import axios from 'axios'; const instance = axios.create({ baseURL: process.e"
 pubDate: 2024-11-21T05:05:00.000Z
 updatedDate: 2025-06-17T02:55:00.000Z
-tags: []
+tags: ["react", "리액트"]
 category: "react"
 slug: "api-yeondonghagi"
 draft: false

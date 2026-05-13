@@ -3,7 +3,7 @@ title: "[C언어] C언어로 뭘 할 수 있을까?"
 description: "C언어, 대체 어디에 쓰는 물건인고? 자, 우리가 C언어 환경 세팅을 다 해놨잖아요? 이제 '이걸 대체 어디다 써먹는 거지?' 싶을 거예요. C언어는 한마디로 '근본'입니다. 모든 언어의 '할아버지' 같은 존재랄까요. 그래서 아직도 엄청나게 많이 쓰이고 있어요. 보통은 이런 데서 C언어가 힘을 발휘합니다. 자세히 알 필요는 없고, 대충 알아두세요. 운영체제(OS) 여러분 컴퓨터에 깔려 있는 Windows나 macOS 같은거를 운영체제 라고하는데 운영체제의 핵심 코드가 바로 C언어로 만들어졌어요. OS는 컴퓨터의 모"
 pubDate: 2025-09-01T13:03:48.000Z
 updatedDate: 2025-09-01T13:33:17.000Z
-tags: ["c", "c"]
+tags: ["c", "씨언어"]
 category: "programming"
 slug: "ceoneo-ceoneoro-mwol-hal-su-isseulkka"
 draft: false

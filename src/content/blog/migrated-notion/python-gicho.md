@@ -3,7 +3,7 @@ title: "python 기초"
 description: "python 기초에 대한 내용을 정리한 글입니다."
 pubDate: 2025-06-19T10:36:00.000Z
 updatedDate: 2025-07-17T10:47:00.000Z
-tags: []
+tags: ["python", "파이썬"]
 category: "python"
 slug: "python-gicho"
 draft: false

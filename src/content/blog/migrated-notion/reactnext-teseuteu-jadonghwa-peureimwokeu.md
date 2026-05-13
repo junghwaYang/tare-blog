@@ -3,7 +3,7 @@ title: "React/Next 테스트 자동화 프레임워크"
 description: "웹/앱 React/Next.js 환경에서의 테스트 자동화 프레임워크와 방식은 주로 다음과 같은 조합과 절차로 진행됩니다. 1. 주요 테스트 자동화 도구 Jest Next.js 및 React 프로젝트에서 가장 널리 사용하는 테스트 프레임워크입니다. 유닛 테스트, 모의(mock) 함수 지원, 스냅샷 테스트 등을 제공합니다. React Testing Librar"
 pubDate: 2025-07-31T12:56:00.000Z
 updatedDate: 2025-07-31T12:56:00.000Z
-tags: []
+tags: ["retrospective", "회고"]
 category: "retrospective"
 slug: "reactnext-teseuteu-jadonghwa-peureimwokeu"
 draft: false

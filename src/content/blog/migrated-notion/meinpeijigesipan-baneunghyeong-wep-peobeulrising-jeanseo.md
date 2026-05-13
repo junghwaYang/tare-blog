@@ -3,7 +3,7 @@ title: "메인페이지/게시판 반응형 웹 퍼블리싱 제안서"
 description: "프로젝트 개요 안녕하세요. 귀하의 반응형 웹 퍼블리싱 프로젝트에 관심을 가지고 제안서를 제출하게 되었습니다. 제공해주신 디자인을 바탕으로 PC와 모바일 모두 최적화된 반응형 웹사이트를 퍼블리싱하여, PHP 개발 단계에서 원활히 적용할 수 있도록 구조적이고 체계적인 작업을 진행하겠습니다. 개발자 소개 및 강점 경력 및 전문성 웹 퍼블리싱 4년 경력 보유 현 "
 pubDate: 2025-06-11T06:33:00.000Z
 updatedDate: 2025-06-11T06:38:00.000Z
-tags: []
+tags: ["projects", "프로젝트"]
 category: "projects"
 slug: "meinpeijigesipan-baneunghyeong-wep-peobeulrising-jeanseo"
 draft: false
