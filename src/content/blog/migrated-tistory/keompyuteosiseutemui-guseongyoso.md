@@ -130,11 +130,14 @@ ogImage: "https://img1.daumcdn.net/thumb/R800x0/?scode=mtistory2&fname=https%3A%
 
 - 외부기억장치 : 하드디스크,cd-rom,플로피 디스크
 
-| low | cpu내의 레지스터 | high |
-| --- | --- | --- |
-| 용량 | 캐시기억장치 스텍ram | 속도 |
-| 주기억장치 dynameic ram | 가격 |
-| high | 보조기억장치: hdd,플로피디스크,cd-rom | low |
+```
+[기억장치 계층 구조 — 위로 갈수록 속도↑ 용량↓ 가격↑]
+
+            cpu내의 레지스터              (속도: high / 용량: low / 가격: high)
+            캐시기억장치, 스택 RAM
+            주기억장치 (Dynamic RAM)
+            보조기억장치: hdd, 플로피디스크, cd-rom  (속도: low / 용량: high / 가격: low)
+```
 
 **  04    보조기억장치**
 
