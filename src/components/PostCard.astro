@@ -7,7 +7,7 @@ interface Props {
 }
 
 const { post } = Astro.props;
-const { title, description, pubDate, tags, category, slug } = post.data;
+const { title, description, pubDate, tags, category, slug, series } = post.data;
 
 const formattedDate = pubDate.toLocaleDateString('ko-KR', {
   year: 'numeric',
@@ -21,7 +21,12 @@ const pubDateISO = pubDate.toISOString();
   <a href={`/blog/${slug}`} class="post-card-link">
     <div class="post-card-inner">
       <div class="post-card-meta-top">
-        <span class="post-card-category">{category}</span>
+        <div class="post-card-badges">
+          <span class="post-card-category">{category}</span>
+          {series && (
+            <span class="post-card-series" aria-label={`시리즈: ${series}`}>{series}</span>
+          )}
+        </div>
         <time datetime={pubDateISO} class="post-card-date">{formattedDate}</time>
       </div>
 
@@ -85,12 +90,34 @@ const pubDateISO = pubDate.toISOString();
     flex-wrap: wrap;
   }
 
+  .post-card-badges {
+    display: flex;
+    align-items: center;
+    gap: 0.375rem;
+    flex-wrap: wrap;
+  }
+
   .post-card-category {
     font-size: 0.75rem;
     font-weight: 600;
     color: var(--accent);
     text-transform: uppercase;
     letter-spacing: 0.04em;
+  }
+
+  .post-card-series {
+    display: inline-block;
+    font-size: 0.7rem;
+    font-weight: 500;
+    color: var(--fg-muted);
+    background-color: var(--bg-hover);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-pill);
+    padding: 0.1em 0.5em;
+    white-space: nowrap;
+    max-width: 10rem;
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
 
   .post-card-date {

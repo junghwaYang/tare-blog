@@ -3,8 +3,10 @@ import type { CollectionEntry } from 'astro:content';
 import BaseLayout from './BaseLayout.astro';
 import TagList from '../components/TagList.astro';
 import TableOfContents from '../components/TableOfContents.astro';
+import SeriesNav from '../components/SeriesNav.astro';
 import { SITE_TITLE, SITE_URL, AUTHOR } from '../consts';
 import { calcReadingTime } from '../utils/readingTime';
+import { getPosts } from '../utils/posts';
 import '../styles/prose.css';
 
 interface Heading {
@@ -22,7 +24,13 @@ interface Props {
 
 const { post, prevPost, nextPost, headings = [] } = Astro.props;
 const readingTime = calcReadingTime(post.body ?? '');
-const { title, description, pubDate, updatedDate, tags, category, ogImage } = post.data;
+const { title, description, pubDate, updatedDate, tags, category, ogImage, series, slug } = post.data;
+
+// 시리즈 글 목록 (series 필드가 있는 경우만)
+const allPosts = series ? await getPosts() : [];
+const seriesPosts = series
+  ? allPosts.filter((p) => p.data.series === series)
+  : [];
 
 const formattedPubDate = pubDate.toLocaleDateString('ko-KR', {
   year: 'numeric',
@@ -127,6 +135,15 @@ const articleJsonLd = {
         <div class="prose">
           <slot />
         </div>
+
+        <!-- 시리즈 내비게이션 (series 필드가 있는 글에서만 표시) -->
+        {series && seriesPosts.length > 1 && (
+          <SeriesNav
+            currentSlug={slug}
+            seriesName={series}
+            seriesPosts={seriesPosts}
+          />
+        )}
       </article>
 
       <!-- 데스크톱 전용 TOC 사이드바 (1200px 이상에서만 표시) -->
