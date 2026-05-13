@@ -33,7 +33,7 @@ for (let idx = 0; idx < pages.length; idx++) {
 }
 
 function pageHref(num: number): string {
-  return num === 1 ? basePath : `${basePath}/${num}`;
+  return num === 1 ? basePath.replace(/\/page$/, '') + '/' : `${basePath}/${num}`;
 }
 ---
 
