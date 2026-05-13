@@ -5,7 +5,7 @@ pubDate: 2025-06-11T05:43:00.000Z
 updatedDate: 2025-06-11T06:20:00.000Z
 tags: ["projects", "프로젝트"]
 category: "projects"
-slug: "jaeoegukmin-sosyeol-keomyuniti-peulraespom-gaebal-jeanseo"
+slug: "overseas-koreans-social-community-platform-proposal"
 draft: false
 originalUrl: "https://www.notion.so/20f4ef560994804191aeedfa55f85c7a"
 ---

@@ -5,7 +5,7 @@ pubDate: 2021-08-06T06:59:24.000Z
 updatedDate: 2021-08-06T07:55:57.000Z
 tags: ["security", "보안"]
 category: "security"
-slug: "deiteo-tongsinui-peurotokolui-ihaewa-jongryu"
+slug: "data-communication-protocols-understanding-types"
 draft: false
 originalUrl: "https://siltare.tistory.com/24"
 ogImage: "https://img1.daumcdn.net/thumb/R800x0/?scode=mtistory2&fname=https%3A%2F%2Ft1.daumcdn.net%2Ftistory_admin%2Fstatic%2Fimages%2FopenGraph%2Fopengraph.png"

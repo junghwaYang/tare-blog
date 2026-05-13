@@ -5,7 +5,7 @@ pubDate: 2025-07-31T12:56:00.000Z
 updatedDate: 2025-07-31T12:56:00.000Z
 tags: ["retrospective", "회고"]
 category: "retrospective"
-slug: "reactnext-teseuteu-jadonghwa-peureimwokeu"
+slug: "react-next-test-automation-framework"
 draft: false
 originalUrl: "https://www.notion.so/2414ef560994802e9de5f1c8b2d34be6"
 ---

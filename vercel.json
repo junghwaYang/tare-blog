@@ -32,7 +32,7 @@
   "redirects": [
     {
       "source": "/blog/deiteobeiseu-sqllite",
-      "destination": "/blog/deiteobeiseusqllite",
+      "destination": "/blog/database-sqlite/",
       "permanent": true
     },
     {
@@ -67,7 +67,7 @@
     },
     {
       "source": "/blog/jaeoegugmin-sosyeol-keomyuniti-peulraespom-gaebal-jeanseo",
-      "destination": "/blog/jaeoegukmin-sosyeol-keomyuniti-peulraespom-gaebal-jeanseo",
+      "destination": "/blog/overseas-koreans-social-community-platform-proposal/",
       "permanent": true
     },
     {
@@ -92,7 +92,7 @@
     },
     {
       "source": "/blog/meinpeiji-gesipan-baneunghyeong-web-peobeulrising-jeanseo",
-      "destination": "/blog/meinpeijigesipan-baneunghyeong-wep-peobeulrising-jeanseo",
+      "destination": "/blog/main-page-board-responsive-web-publishing-proposal/",
       "permanent": true
     },
     {
@@ -102,12 +102,12 @@
     },
     {
       "source": "/blog/nonrijeog-churon-suhag-munje-haegyeol-dadangye-churon-gpqa-math-benchimakeu-gwan",
-      "destination": "/blog/nonrijeok-churon-suhak-munje-haegyeol-dadangye-churon",
+      "destination": "/blog/logical-reasoning-math-problem-solving-multi-step/",
       "permanent": true
     },
     {
       "source": "/blog/react-next-teseuteu-jadonghwa-peureimwokeu",
-      "destination": "/blog/reactnext-teseuteu-jadonghwa-peureimwokeu",
+      "destination": "/blog/react-next-test-automation-framework/",
       "permanent": true
     },
     {
@@ -207,17 +207,67 @@
     },
     {
       "source": "/blog/chasedae-eijeontig-gaebal-hwangyeong-ai-ide-ui-akitegcheo-mich-wokeupeulrou-bigyo-bunseog",
-      "destination": "/blog/chasedae-eijeontik-gaebal-hwangyeongai-ideui-akitekcheo",
+      "destination": "/blog/next-gen-agentic-ide-architecture/",
       "permanent": true
     },
     {
       "source": "/blog/deiteo-tongsinui-gibonjeogin-guseongyoso",
-      "destination": "/blog/deiteo-tongsinui-gibonjeokin-guseongyoso",
+      "destination": "/blog/data-communication-basic-components/",
       "permanent": true
     },
     {
       "source": "/blog/keompyuteo-yeogsawa-bunryu",
-      "destination": "/blog/keompyuteo-yeoksawa-bunryu",
+      "destination": "/blog/computer-history-classification/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/chasedae-eijeontik-gaebal-hwangyeongai-ideui-akitekcheo",
+      "destination": "/blog/next-gen-agentic-ide-architecture/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/deiteo-tongsinui-gibonjeokin-guseongyoso",
+      "destination": "/blog/data-communication-basic-components/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/deiteo-tongsinui-peurotokolui-ihaewa-jongryu",
+      "destination": "/blog/data-communication-protocols-understanding-types/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/keompyuteo-yeoksawa-bunryu",
+      "destination": "/blog/computer-history-classification/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/keompyuteosiseutemui-guseongyoso",
+      "destination": "/blog/computer-system-components/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/deiteobeiseusqllite",
+      "destination": "/blog/database-sqlite/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/jaeoegukmin-sosyeol-keomyuniti-peulraespom-gaebal-jeanseo",
+      "destination": "/blog/overseas-koreans-social-community-platform-proposal/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/meinpeijigesipan-baneunghyeong-wep-peobeulrising-jeanseo",
+      "destination": "/blog/main-page-board-responsive-web-publishing-proposal/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/nonrijeok-churon-suhak-munje-haegyeol-dadangye-churon",
+      "destination": "/blog/logical-reasoning-math-problem-solving-multi-step/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/reactnext-teseuteu-jadonghwa-peureimwokeu",
+      "destination": "/blog/react-next-test-automation-framework/",
       "permanent": true
     }
   ]

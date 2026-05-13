@@ -5,7 +5,7 @@ pubDate: 2025-06-24T10:56:00.000Z
 updatedDate: 2025-07-31T12:54:00.000Z
 tags: ["database", "데이터베이스"]
 category: "database"
-slug: "deiteobeiseusqllite"
+slug: "database-sqlite"
 draft: false
 originalUrl: "https://www.notion.so/21c4ef56099480c7b684d6744844fa68"
 ---

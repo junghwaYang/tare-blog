@@ -4,7 +4,7 @@ description: ": Cursor, Claude Code, Antigravity를 중심으로 --- 초록 (Abs
 pubDate: 2026-01-05T16:29:54.000Z
 tags: ["agent", "ai", "antigravity", "claude-code", "claudecode", "cursor", "web-hacking", "안티그래비티", "에이전트", "웹해킹", "인공지능", "커서", "클로드코드"]
 category: "web-hacking"
-slug: "chasedae-eijeontik-gaebal-hwangyeongai-ideui-akitekcheo"
+slug: "next-gen-agentic-ide-architecture"
 draft: false
 originalUrl: "https://siltare.tistory.com/37"
 ogImage: "https://img1.daumcdn.net/thumb/R800x0/?scode=mtistory2&fname=https%3A%2F%2Ft1.daumcdn.net%2Ftistory_admin%2Fstatic%2Fimages%2FopenGraph%2Fopengraph.png"

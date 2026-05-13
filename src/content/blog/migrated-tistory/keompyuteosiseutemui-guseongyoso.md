@@ -5,7 +5,7 @@ pubDate: 2021-08-06T08:42:18.000Z
 updatedDate: 2021-08-10T01:01:45.000Z
 tags: ["security", "보안"]
 category: "security"
-slug: "keompyuteosiseutemui-guseongyoso"
+slug: "computer-system-components"
 draft: false
 originalUrl: "https://siltare.tistory.com/25"
 ogImage: "https://img1.daumcdn.net/thumb/R800x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdna%2Fb7dNIj%2FbtrbpPOwJ1E%2FAAAAAAAAAAAAAAAAAAAAAAW7qTwub8eA5eC1igUH4NvyyU3JbxPwOVnU8cRAZN6z%2Fimg.png%3Fcredential%3DyqXZFxpELC7KVnFOS48ylbz2pIh7yKj8%26expires%3D1780239599%26allow_ip%3D%26allow_referer%3D%26signature%3DgbEDP2K8m%252FmRp3QyQ%252BsR9nGb%252Fvo%253D"

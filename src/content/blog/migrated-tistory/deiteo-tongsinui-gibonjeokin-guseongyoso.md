@@ -5,7 +5,7 @@ pubDate: 2021-08-06T06:22:59.000Z
 updatedDate: 2021-08-06T06:23:34.000Z
 tags: ["security", "보안"]
 category: "security"
-slug: "deiteo-tongsinui-gibonjeokin-guseongyoso"
+slug: "data-communication-basic-components"
 draft: false
 originalUrl: "https://siltare.tistory.com/23"
 ogImage: "https://img1.daumcdn.net/thumb/R800x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdna%2FCjun7%2Fbtrbtzxa6wb%2FAAAAAAAAAAAAAAAAAAAAAPglBMOWArmhUQEqkkBshTAtmLpGn20JpplomK0Jr17_%2Fimg.jpg%3Fcredential%3DyqXZFxpELC7KVnFOS48ylbz2pIh7yKj8%26expires%3D1780239599%26allow_ip%3D%26allow_referer%3D%26signature%3DdEuGUR%252FeV9q1cMVZWv5nZVK6j6g%253D"

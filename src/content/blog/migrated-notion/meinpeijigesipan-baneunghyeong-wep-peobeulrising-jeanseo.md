@@ -5,7 +5,7 @@ pubDate: 2025-06-11T06:33:00.000Z
 updatedDate: 2025-06-11T06:38:00.000Z
 tags: ["projects", "프로젝트"]
 category: "projects"
-slug: "meinpeijigesipan-baneunghyeong-wep-peobeulrising-jeanseo"
+slug: "main-page-board-responsive-web-publishing-proposal"
 draft: false
 originalUrl: "https://www.notion.so/20f4ef56099480c69a96c6e5defb8a7d"
 ---

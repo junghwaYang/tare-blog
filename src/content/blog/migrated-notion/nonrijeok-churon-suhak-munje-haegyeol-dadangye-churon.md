@@ -5,7 +5,7 @@ pubDate: 2025-07-31T11:57:00.000Z
 updatedDate: 2025-07-31T11:58:00.000Z
 tags: ["retrospective", "회고"]
 category: "retrospective"
-slug: "nonrijeok-churon-suhak-munje-haegyeol-dadangye-churon"
+slug: "logical-reasoning-math-problem-solving-multi-step"
 draft: false
 originalUrl: "https://www.notion.so/2414ef56099480c480eed930508b3c4d"
 ---

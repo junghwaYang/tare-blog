@@ -4,7 +4,7 @@ description: "1. 컴퓨터 역사 01      계산기 형태   고대의 계산기
 pubDate: 2021-08-10T01:38:23.000Z
 tags: ["security", "보안"]
 category: "security"
-slug: "keompyuteo-yeoksawa-bunryu"
+slug: "computer-history-classification"
 draft: false
 originalUrl: "https://siltare.tistory.com/26"
 ogImage: "https://img1.daumcdn.net/thumb/R800x0/?scode=mtistory2&fname=https%3A%2F%2Ft1.daumcdn.net%2Ftistory_admin%2Fstatic%2Fimages%2FopenGraph%2Fopengraph.png"
