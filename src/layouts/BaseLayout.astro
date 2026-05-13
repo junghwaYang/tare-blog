@@ -136,6 +136,13 @@ const ogImageURL = new URL(ogImage, SITE_URL).href;
       </script>
     )}
 
+    {import.meta.env.PROD && (
+      <script>
+        import { injectSpeedInsights } from '@vercel/speed-insights';
+        injectSpeedInsights();
+      </script>
+    )}
+
     <!-- View Transitions: 페이지 교체 후 다크모드 재적용 (FOUC 방지) + main/container 너비 잔재 정리 -->
     <script is:inline>
       document.addEventListener('astro:after-swap', function () {
