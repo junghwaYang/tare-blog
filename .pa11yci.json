@@ -15,6 +15,7 @@
     "http://localhost:3000/blog/",
     "http://localhost:3000/categories/",
     "http://localhost:3000/tags/",
-    "http://localhost:3000/blog/astro-blog-getting-started/"
+    "http://localhost:3000/blog/astro-blog-getting-started/",
+    "http://localhost:3000/about/"
   ]
 }

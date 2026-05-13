@@ -1,0 +1,177 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { SITE_TITLE } from '../consts';
+
+const title = `About — ${SITE_TITLE}`;
+const description = '프론트엔드 개발자 양정화의 소개 페이지입니다.';
+---
+
+<BaseLayout title={title} description={description}>
+  <div class="container about-container">
+    <header class="about-header">
+      <h1 class="about-name">양정화</h1>
+      <p class="about-subtitle">프론트엔드 개발자 — 코드와 글을 함께 만듭니다.</p>
+    </header>
+
+    <section class="about-section" aria-labelledby="about-intro-heading">
+      <h2 id="about-intro-heading" class="about-section-title">소개</h2>
+      <p class="about-bio">
+        React·TypeScript·Astro를 중심으로 일합니다.
+        다른 개발자들이 코드를 더 빠르게 읽도록 만드는 일에 관심이 있고,
+        새로운 도구를 직접 써보고 도움이 됐다면 글로 남깁니다.
+        마이그레이션, 아키텍처 결정, 작은 성능 개선까지 — 실제로 해본 것만 씁니다.
+      </p>
+    </section>
+
+    <section class="about-section" aria-labelledby="about-interests-heading">
+      <h2 id="about-interests-heading" class="about-section-title">관심사</h2>
+      <ul class="about-interests" aria-label="관심 분야 목록">
+        <li>프론트엔드 아키텍처와 코드 가독성</li>
+        <li>React 생태계 — 컴포넌트 설계, 상태 관리</li>
+        <li>TypeScript 타입 시스템 활용</li>
+        <li>개발 경험(DX) 개선과 빌드 도구</li>
+        <li>기술 글쓰기와 지식 아카이빙</li>
+      </ul>
+    </section>
+
+    <section class="about-section" aria-labelledby="about-contact-heading">
+      <h2 id="about-contact-heading" class="about-section-title">연락</h2>
+      <ul class="about-contact" role="list">
+        <li>
+          <a
+            href="https://github.com/junghwaYang"
+            class="about-contact-link"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="GitHub 프로필 — 새 탭에서 열림"
+          >
+            GitHub
+            <span class="about-contact-handle">@junghwaYang</span>
+          </a>
+        </li>
+        <li>
+          <a
+            href="mailto:siltarre@gmail.com"
+            class="about-contact-link"
+            aria-label="이메일 보내기 — siltarre@gmail.com"
+          >
+            Email
+            <span class="about-contact-handle">siltarre@gmail.com</span>
+          </a>
+        </li>
+      </ul>
+    </section>
+  </div>
+</BaseLayout>
+
+<style>
+  .about-container {
+    padding-block: 4rem;
+    max-width: 48rem;
+  }
+
+  .about-header {
+    margin-bottom: 3rem;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .about-name {
+    font-size: clamp(2rem, 5vw, 3rem);
+    font-weight: 800;
+    letter-spacing: -0.04em;
+    color: var(--fg);
+    margin-bottom: 0.5rem;
+  }
+
+  .about-subtitle {
+    font-size: 1.0625rem;
+    color: var(--fg-muted);
+    line-height: 1.6;
+  }
+
+  .about-section {
+    margin-bottom: 2.5rem;
+  }
+
+  .about-section-title {
+    font-size: 0.8125rem;
+    font-weight: 600;
+    color: var(--fg-subtle);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    margin-bottom: 0.875rem;
+  }
+
+  .about-bio {
+    font-size: 1rem;
+    color: var(--fg);
+    line-height: 1.75;
+    word-break: keep-all;
+  }
+
+  .about-interests {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .about-interests li {
+    font-size: 0.9375rem;
+    color: var(--fg-muted);
+    padding-left: 1rem;
+    position: relative;
+  }
+
+  .about-interests li::before {
+    content: '–';
+    position: absolute;
+    left: 0;
+    color: var(--fg-subtle);
+  }
+
+  .about-contact {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.625rem;
+  }
+
+  .about-contact-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.625rem;
+    font-size: 0.9375rem;
+    font-weight: 600;
+    color: var(--fg);
+    text-decoration: none;
+    transition: color var(--transition-fast);
+  }
+
+  .about-contact-link:hover {
+    color: var(--accent);
+  }
+
+  .about-contact-link:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 3px;
+    border-radius: var(--radius-sm);
+  }
+
+  .about-contact-handle {
+    font-size: 0.875rem;
+    font-weight: 400;
+    color: var(--fg-muted);
+  }
+
+  @media (max-width: 640px) {
+    .about-container {
+      padding-block: 2.5rem;
+    }
+  }
+</style>
