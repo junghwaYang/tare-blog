@@ -12,6 +12,12 @@ for (const category of allCategories) {
   categoryCounts.set(category, posts.length);
 }
 
+// 글 수 많은 순으로 정렬 (동률이면 알파벳순)
+const sortedCategories = [...allCategories].sort((a, b) => {
+  const diff = (categoryCounts.get(b) ?? 0) - (categoryCounts.get(a) ?? 0);
+  return diff !== 0 ? diff : a.localeCompare(b);
+});
+
 const title = `카테고리 — ${SITE_TITLE}`;
 const description = `총 ${allCategories.length}개의 카테고리가 있습니다.`;
 ---
@@ -23,9 +29,9 @@ const description = `총 ${allCategories.length}개의 카테고리가 있습니
       <p class="categories-count">{allCategories.length}개</p>
     </header>
 
-    {allCategories.length > 0 ? (
+    {sortedCategories.length > 0 ? (
       <ul class="category-list" role="list">
-        {allCategories.map((category) => (
+        {sortedCategories.map((category) => (
           <li>
             <a href={`/categories/${category}`} class="category-item">
               <span class="category-name">{category}</span>

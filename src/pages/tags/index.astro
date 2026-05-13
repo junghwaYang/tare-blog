@@ -12,6 +12,12 @@ for (const tag of allTags) {
   tagCounts.set(tag, posts.length);
 }
 
+// 글 수 많은 순으로 정렬 (동률이면 알파벳순)
+const sortedTags = [...allTags].sort((a, b) => {
+  const diff = (tagCounts.get(b) ?? 0) - (tagCounts.get(a) ?? 0);
+  return diff !== 0 ? diff : a.localeCompare(b);
+});
+
 const title = `태그 — ${SITE_TITLE}`;
 const description = `총 ${allTags.length}개의 태그가 있습니다.`;
 ---
@@ -23,9 +29,9 @@ const description = `총 ${allTags.length}개의 태그가 있습니다.`;
       <p class="tags-count">{allTags.length}개</p>
     </header>
 
-    {allTags.length > 0 ? (
+    {sortedTags.length > 0 ? (
       <ul class="tag-list" role="list">
-        {allTags.map((tag) => (
+        {sortedTags.map((tag) => (
           <li>
             <a href={`/tags/${tag}`} class="tag-item">
               <span class="tag-name">{tag}</span>
