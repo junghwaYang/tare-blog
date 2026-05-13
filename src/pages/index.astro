@@ -19,11 +19,24 @@ const websiteJsonLd = {
   url: SITE_URL,
   description: SITE_DESCRIPTION,
   inLanguage: 'ko-KR',
+  author: { '@type': 'Person', name: '양정화' },
+};
+
+const personJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'Person',
+  name: '양정화',
+  alternateName: 'tare',
+  url: SITE_URL,
+  sameAs: ['https://github.com/junghwaYang'],
+  email: 'siltarre@gmail.com',
+  jobTitle: '프론트엔드 개발자',
 };
 ---
 
 <BaseLayout description={SITE_DESCRIPTION}>
   <script slot="jsonld" type="application/ld+json" set:html={JSON.stringify(websiteJsonLd)} />
+  <script slot="jsonld" type="application/ld+json" set:html={JSON.stringify(personJsonLd)} />
   <div class="container home-container">
     <section class="home-hero" aria-label="소개">
       <p class="home-eyebrow">프론트엔드 개발자</p>
