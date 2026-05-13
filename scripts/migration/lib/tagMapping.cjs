@@ -21,7 +21,6 @@ const EN_TO_KO = {
   react: '리액트',
   next: '넥스트',
   nextjs: '넥스트',
-  'next.js': '넥스트',
   astro: '아스트로',
   python: '파이썬',
   java: '자바',
