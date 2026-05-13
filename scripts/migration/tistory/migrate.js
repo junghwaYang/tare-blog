@@ -5,13 +5,17 @@
  *
  * 사용법:
  *   node scripts/migration/tistory/migrate.js [--limit 5] [--all]
- *   기본: 최신 5편만 처리 (시범 모드)
+ *   node scripts/migration/tistory/migrate.js --source rss [--limit 5] [--all]
+ *   node scripts/migration/tistory/migrate.js --source category [--dry-run]
+ *   node scripts/migration/tistory/migrate.js --source archive [--dry-run]
+ *   기본: RSS 소스, 최신 5편만 처리 (시범 모드)
  *
  * 전략:
  *   1. RSS 피드에서 글 목록 + 본문 HTML 수집 (기본 소스)
- *   2. 개별 HTML 페이지에서 태그·카테고리 보완
- *   3. HTML → Markdown 변환 (내장 변환기)
- *   4. 이미지 다운로드 (tistory CDN / kakaocdn)
+ *   2. 카테고리/아카이브 페이지 순회로 전체 글 URL 수집 (--source category/archive)
+ *   3. 개별 HTML 페이지에서 태그·카테고리 보완
+ *   4. HTML → Markdown 변환 (내장 변환기)
+ *   5. 이미지 다운로드 (tistory CDN / kakaocdn)
  */
 
 import fs from 'fs';
@@ -583,53 +587,254 @@ async function migratePost(item, index, total) {
 }
 
 // ---------------------------------------------------------------------------
+// 기존 마이그레이션된 글 originalUrl 목록 수집
+// ---------------------------------------------------------------------------
+
+function collectExistingUrls() {
+  const existing = new Set();
+  if (!fs.existsSync(OUTPUT_DIR)) return existing;
+  for (const file of fs.readdirSync(OUTPUT_DIR)) {
+    if (!file.endsWith('.md')) continue;
+    const content = fs.readFileSync(path.join(OUTPUT_DIR, file), 'utf-8');
+    const match = content.match(/^originalUrl:\s*"([^"]+)"/m);
+    if (match) existing.add(match[1].trim());
+  }
+  return existing;
+}
+
+// ---------------------------------------------------------------------------
+// 카테고리 페이지 순회 → 글 URL 목록 수집
+// ---------------------------------------------------------------------------
+
+// 사이트의 카테고리 목록 (archive 페이지 사이드바 기준)
+const TISTORY_CATEGORIES = [
+  '%EC%9B%B9%2C%EC%95%B1%20%ED%95%B4%ED%82%B9/%EA%B8%B0%EC%B4%88',
+  '%EC%9B%B9%2C%EC%95%B1%20%ED%95%B4%ED%82%B9/%EC%8B%AC%ED%99%94',
+  '%EC%9B%B9%2C%EC%95%B1%20%ED%95%B4%ED%82%B9/%EC%97%B0%EA%B5%AC',
+  'wargame/Dreamhack',
+  'wargame/webhacking.kr',
+  '%EC%A0%95%EB%B3%B4%EB%B3%B4%ED%98%B8%ED%95%99/%EB%A9%80%ED%8B%B0%EB%AF%B8%EB%94%94%EC%96%B4%EA%B0%9C%EB%A1%A0',
+  '%EC%A0%95%EB%B3%B4%EB%B3%B4%ED%98%B8%ED%95%99/%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B2%A0%EC%9D%B4%EC%8A%A4',
+  '%EC%A0%95%EB%B3%B4%EB%B3%B4%ED%98%B8%ED%95%99/%EB%8D%B0%EC%9D%B4%ED%84%B0%20%ED%86%B5%EC%8B%A0',
+  '%EC%A0%95%EB%B3%B4%EB%B3%B4%ED%98%B8%ED%95%99/%EC%A0%84%EC%82%B0%EA%B3%84%EC%82%B0%EA%B8%B0%20%EA%B5%AC%EC%A1%B0',
+  '%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D/C%EC%96%B8%EC%96%B4',
+  '%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D/Javascript',
+  '%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D/JAVA',
+  '%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D/Python',
+  '%EC%9B%B9%20%EA%B0%9C%EB%B0%9C/React',
+  '%EC%9B%B9%20%EA%B0%9C%EB%B0%9C/Next',
+  '%EC%9B%B9%20%EA%B0%9C%EB%B0%9C/Spring',
+  '%EC%9B%B9%20%EA%B0%9C%EB%B0%9C/MySQL',
+  '3D%20%EB%AA%A8%EB%8D%B8%EB%A7%81%20%26%20%EA%B2%8C%EC%9E%84%20%EA%B0%9C%EB%B0%9C/%EB%B8%94%EB%A0%8C%EB%8D%94',
+  '3D%20%EB%AA%A8%EB%8D%B8%EB%A7%81%20%26%20%EA%B2%8C%EC%9E%84%20%EA%B0%9C%EB%B0%9C/%EC%9C%A0%EB%8B%88%ED%8B%B0',
+];
+
+async function collectCategoryUrls() {
+  const postIds = new Set();
+
+  for (const cat of TISTORY_CATEGORIES) {
+    const url = `${TISTORY_BASE}/category/${cat}`;
+    try {
+      const res = await httpGet(url);
+      if (res.status !== 200) continue;
+      const html = res.buffer.toString('utf-8');
+      // href="/숫자" 패턴 추출
+      for (const m of html.matchAll(/href="\/(\d+)"/g)) {
+        postIds.add(parseInt(m[1], 10));
+      }
+      // JSON-LD 내 URL 패턴도 추출
+      for (const m of html.matchAll(/"@id":"https:\/\/siltare\.tistory\.com\/(\d+)"/g)) {
+        postIds.add(parseInt(m[1], 10));
+      }
+    } catch (e) {
+      console.warn(`  [WARN] 카테고리 수집 실패: ${cat} → ${e.message}`);
+    }
+    await sleep(SLEEP_MS);
+  }
+
+  return [...postIds].sort((a, b) => a - b).map((id) => ({
+    link: `${TISTORY_BASE}/${id}`,
+    postId: String(id),
+    title: `tistory-${id}`,  // 실제 제목은 fetchPostMeta에서 추출
+    descHtml: '',
+    pubDate: new Date().toISOString(),
+  }));
+}
+
+// ---------------------------------------------------------------------------
+// 아카이브 페이지 순회 → 글 URL 목록 수집 (category 방식의 alias)
+// ---------------------------------------------------------------------------
+
+async function collectArchiveUrls() {
+  // tistory archive 페이지는 JS 렌더링 없이 카테고리 사이드바에서 전체 목록 파악 가능
+  // category와 동일한 방식으로 수집
+  return collectCategoryUrls();
+}
+
+// ---------------------------------------------------------------------------
+// HTML 페이지에서 글 제목·pubDate 추출 (category 소스용)
+// ---------------------------------------------------------------------------
+
+async function enrichPostFromPage(item) {
+  try {
+    const res = await httpGet(item.link);
+    if (res.status !== 200) return item;
+    const html = res.buffer.toString('utf-8');
+
+    // og:title
+    const ogTitle = html.match(/<meta[^>]+property="og:title"[^>]+content="([^"]+)"/)?.[1]?.trim();
+    // article:published_time
+    const pubTime = html.match(/<meta[^>]+property="article:published_time"[^>]+content="([^"]+)"/)?.[1]?.trim();
+    // <title> 태그 fallback
+    const pageTitle = html.match(/<title>([^<]+)<\/title>/)?.[1]?.trim();
+
+    return {
+      ...item,
+      title: ogTitle || pageTitle || item.title,
+      pubDate: pubTime || item.pubDate,
+    };
+  } catch {
+    return item;
+  }
+}
+
+// ---------------------------------------------------------------------------
 // 메인
 // ---------------------------------------------------------------------------
 
 async function main() {
   const args = process.argv.slice(2);
   const isAll = args.includes('--all');
+  const isDryRun = args.includes('--dry-run');
   const limitArg = args.indexOf('--limit');
   const limit = limitArg >= 0 ? parseInt(args[limitArg + 1], 10) : 5;
+  const sourceArg = args.indexOf('--source');
+  const source = sourceArg >= 0 ? args[sourceArg + 1] : 'rss';
 
   console.log('=== tistory 마이그레이션 시작 ===');
   console.log(`대상: ${TISTORY_BASE}`);
-  console.log(`모드: ${isAll ? '전체' : `시범 ${limit}편`}`);
+  console.log(`소스: ${source}`);
+  if (isDryRun) console.log('모드: dry-run (파일 저장 안 함)');
 
   fs.mkdirSync(OUTPUT_DIR, { recursive: true });
   fs.mkdirSync(IMAGE_DIR, { recursive: true });
 
-  console.log('\nRSS 수집 중...');
-  const rssRes = await httpGet(RSS_URL);
-  if (rssRes.status !== 200) {
-    console.error(`RSS 수집 실패 (${rssRes.status})`);
+  // 기존 마이그레이션된 URL 목록 (중복 skip용)
+  const existingUrls = collectExistingUrls();
+  console.log(`기존 마이그레이션: ${existingUrls.size}편`);
+
+  let allPosts = [];
+
+  if (source === 'rss') {
+    // -----------------------------------------------------------------------
+    // RSS 소스 (기존 동작)
+    // -----------------------------------------------------------------------
+    console.log(`모드: ${isAll ? '전체' : `시범 ${limit}편`}`);
+    console.log('\nRSS 수집 중...');
+    const rssRes = await httpGet(RSS_URL);
+    if (rssRes.status !== 200) {
+      console.error(`RSS 수집 실패 (${rssRes.status})`);
+      process.exit(1);
+    }
+    allPosts = parseRss(rssRes.buffer.toString('utf-8'));
+    console.log(`총 ${allPosts.length}편 발견 (pages/ 제외)`);
+
+    const targets = isAll ? allPosts : allPosts.slice(0, limit);
+    console.log(`처리 대상: ${targets.length}편`);
+
+    const results = [];
+    const errors = [];
+
+    for (let i = 0; i < targets.length; i++) {
+      try {
+        const result = await migratePost(targets[i], i, targets.length);
+        if (result) results.push(result);
+      } catch (e) {
+        console.error(`  [ERROR] 변환 실패: ${targets[i].title} → ${e.message}`);
+        errors.push({ title: targets[i].title, error: e.message });
+      }
+      await sleep(SLEEP_MS);
+    }
+
+    printSummary(results, errors, allPosts.length);
+
+  } else if (source === 'category' || source === 'archive') {
+    // -----------------------------------------------------------------------
+    // 카테고리/아카이브 소스 (신규)
+    // -----------------------------------------------------------------------
+    console.log(`\n카테고리 페이지 순회 중...`);
+    const discovered = source === 'archive'
+      ? await collectArchiveUrls()
+      : await collectCategoryUrls();
+
+    console.log(`발견된 총 URL 수: ${discovered.length}편`);
+
+    // 중복 제거
+    const newPosts = discovered.filter((p) => !existingUrls.has(p.link));
+    console.log(`기존 제외 후 신규: ${newPosts.length}편`);
+
+    if (isDryRun) {
+      console.log('\n[dry-run] 신규 URL 목록:');
+      for (const p of newPosts) console.log(`  ${p.link}`);
+      console.log(`\n[dry-run] 처리 예정: ${newPosts.length}편 (실제 파일 저장 안 함)`);
+      return;
+    }
+
+    if (newPosts.length === 0) {
+      console.log('신규 글 없음. 종료.');
+      return;
+    }
+
+    // 안전 임계: 30편 초과 시 첫 30편만
+    const targets = newPosts.length > 30 ? newPosts.slice(0, 30) : newPosts;
+    if (newPosts.length > 30) {
+      console.log(`[경고] 30편 초과 (${newPosts.length}편). 첫 30편만 처리. 나머지는 차기 세션 권고.`);
+    }
+    console.log(`처리 대상: ${targets.length}편`);
+
+    const results = [];
+    const errors = [];
+
+    for (let i = 0; i < targets.length; i++) {
+      // 제목·날짜 보강 (카테고리 소스는 HTML 페이지에서 추출)
+      const enriched = await enrichPostFromPage(targets[i]);
+      await sleep(SLEEP_MS);
+      try {
+        const result = await migratePost(enriched, i, targets.length);
+        if (result) results.push(result);
+      } catch (e) {
+        console.error(`  [ERROR] 변환 실패: ${enriched.link} → ${e.message}`);
+        errors.push({ title: enriched.link, error: e.message });
+      }
+      await sleep(SLEEP_MS);
+    }
+
+    printSummary(results, errors, discovered.length);
+
+  } else {
+    console.error(`알 수 없는 소스: ${source}. rss | category | archive 중 선택하세요.`);
     process.exit(1);
   }
-  const allPosts = parseRss(rssRes.buffer.toString('utf-8'));
-  console.log(`총 ${allPosts.length}편 발견 (pages/ 제외)`);
+}
 
-  const targets = isAll ? allPosts : allPosts.slice(0, limit);
-  console.log(`처리 대상: ${targets.length}편`);
-
-  const results = [];
-  const errors = [];
-
-  for (let i = 0; i < targets.length; i++) {
-    try {
-      const result = await migratePost(targets[i], i, targets.length);
-      if (result) results.push(result);
-    } catch (e) {
-      console.error(`  [ERROR] 변환 실패: ${targets[i].title} → ${e.message}`);
-      errors.push({ title: targets[i].title, error: e.message });
-    }
-    await sleep(SLEEP_MS);
-  }
-
+function printSummary(results, errors, totalDiscovered) {
   console.log('\n=== 결과 요약 ===');
-  console.log(`성공: ${results.length}/${targets.length}편`);
+  console.log(`성공: ${results.length}편`);
   if (errors.length > 0) {
     console.log(`실패: ${errors.length}편`);
     for (const e of errors) console.log(`  - ${e.title}: ${e.error}`);
+  }
+
+  // 카테고리 분포
+  const catDist = {};
+  for (const r of results) {
+    catDist[r.category] = (catDist[r.category] || 0) + 1;
+  }
+  if (Object.keys(catDist).length > 0) {
+    console.log('\n카테고리 분포:');
+    for (const [cat, cnt] of Object.entries(catDist)) {
+      console.log(`  ${cat}: ${cnt}편`);
+    }
   }
 
   for (const r of results) {
@@ -641,7 +846,7 @@ async function main() {
 
   const totalImages = results.reduce((s, r) => s + r.downloadCount, 0);
   console.log(`\n전체 통계:`);
-  console.log(`  RSS 글 수: ${allPosts.length}편`);
+  console.log(`  발견된 글 수: ${totalDiscovered}편`);
   console.log(`  이번 처리: ${results.length}편`);
   console.log(`  총 이미지 다운로드: ${totalImages}개`);
 }
